@@ -602,3 +602,7 @@ com.mojang.authlib.exceptions.AuthenticationException: The client has sent too m
 [08Nov2019 19:37:13.938] [Client thread/INFO] [net.minecraft.client.gui.NewChatGui/]: [CHAT] Gave 1 [Black Concrete Stairs] to Dev
 [08Nov2019 19:37:42.294] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Saving and pausing game...
 [08Nov2019 19:37:42.297] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'New World'/minecraft:overworld
+[08Nov2019 19:40:21.043] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Saving and pausing game...
+[08Nov2019 19:40:21.045] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'New World'/minecraft:overworld
+[08Nov2019 20:04:52.897] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set own game mode to Creative Mode]
+[08Nov2019 20:04:52.910] [Client thread/INFO] [net.minecraft.client.gui.NewChatGui/]: [CHAT] Set own game mode to Creative Mode

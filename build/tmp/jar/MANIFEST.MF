@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: SweetConcrete
+Implementation-Version: 1.14.4-1.0.0.0
+Specification-Vendor: rahala
+Specification-Title: sweetconcrete
+Implementation-Timestamp: 2019-11-08T20:35:55-0800
+Specification-Version: 1.14.4-1.0.0.0
+Implementation-Vendor: rahala
+
