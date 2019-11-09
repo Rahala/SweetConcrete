@@ -1,10 +1,8 @@
 package org.villainy.sweetconcrete;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,10 +14,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.villainy.sweetconcrete.blocks.ConcreteSlabBlock;
 import org.villainy.sweetconcrete.blocks.ConcreteStairsBlock;
+import org.villainy.sweetconcrete.blocks.ConcreteWallBlock;
 import org.villainy.sweetconcrete.items.ConcreteSlabBlockItem;
 import org.villainy.sweetconcrete.items.ConcreteStairsBlockItem;
+import org.villainy.sweetconcrete.items.ConcreteWallBlockItem;
 import org.villainy.sweetconcrete.objectholders.ConcreteSlabBlocks;
 import org.villainy.sweetconcrete.objectholders.ConcreteStairsBlocks;
+import org.villainy.sweetconcrete.objectholders.ConcreteWallBlocks;
 import org.villainy.sweetconcrete.proxy.ClientProxy;
 import org.villainy.sweetconcrete.proxy.IProxy;
 import org.villainy.sweetconcrete.proxy.CommonProxy;
@@ -57,6 +58,7 @@ public class SweetConcrete
 
                 blockRegistry.register(slab);
                 blockRegistry.register(new ConcreteStairsBlock(dyeColor, slab.getDefaultState()));
+                blockRegistry.register(new ConcreteWallBlock(dyeColor));
             });
         }
 
@@ -81,7 +83,7 @@ public class SweetConcrete
                     ConcreteSlabBlocks.CYAN,
                     ConcreteSlabBlocks.PURPLE,
                     ConcreteSlabBlocks.GRAY).forEach (block ->
-                itemRegistry.register(new ConcreteSlabBlockItem(block))
+                    itemRegistry.register(new ConcreteSlabBlockItem(block))
             );
 
             Stream.of(
@@ -102,6 +104,26 @@ public class SweetConcrete
                     ConcreteStairsBlocks.PURPLE,
                     ConcreteStairsBlocks.GRAY).forEach (block ->
                     itemRegistry.register(new ConcreteStairsBlockItem(block))
+            );
+
+            Stream.of(
+                    ConcreteWallBlocks.RED,
+                    ConcreteWallBlocks.YELLOW,
+                    ConcreteWallBlocks.GREEN,
+                    ConcreteWallBlocks.BLACK,
+                    ConcreteWallBlocks.BROWN,
+                    ConcreteWallBlocks.BLUE,
+                    ConcreteWallBlocks.WHITE,
+                    ConcreteWallBlocks.ORANGE,
+                    ConcreteWallBlocks.LIGHT_BLUE,
+                    ConcreteWallBlocks.MAGENTA,
+                    ConcreteWallBlocks.PINK,
+                    ConcreteWallBlocks.LIGHT_GRAY,
+                    ConcreteWallBlocks.LIME,
+                    ConcreteWallBlocks.CYAN,
+                    ConcreteWallBlocks.PURPLE,
+                    ConcreteWallBlocks.GRAY).forEach (block ->
+                    itemRegistry.register(new ConcreteWallBlockItem(block))
             );
         }
     }

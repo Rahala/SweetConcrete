@@ -31,7 +31,24 @@
   "block.sweetconcrete.lime_concrete_stairs": "Lime Concrete Stairs",
   "block.sweetconcrete.cyan_concrete_stairs": "Cyan Concrete Stairs",
   "block.sweetconcrete.purple_concrete_stairs": "Purple Concrete Stairs",
-  "block.sweetconcrete.gray_concrete_stairs": "Gray Concrete Stairs"
+  "block.sweetconcrete.gray_concrete_stairs": "Gray Concrete Stairs",
+
+  "block.sweetconcrete.red_concrete_wall": "Red Concrete Wall",
+  "block.sweetconcrete.yellow_concrete_wall": "Yellow Concrete Wall",
+  "block.sweetconcrete.green_concrete_wall": "Green Concrete Wall",
+  "block.sweetconcrete.black_concrete_wall": "Black Concrete Wall",
+  "block.sweetconcrete.brown_concrete_wall": "Brown Concrete Wall",
+  "block.sweetconcrete.blue_concrete_wall": "Blue Concrete Wall",
+  "block.sweetconcrete.white_concrete_wall": "White Concrete Wall",
+  "block.sweetconcrete.orange_concrete_wall": "Orange Concrete Wall",
+  "block.sweetconcrete.light_blue_concrete_wall": "Light Blue Concrete Wall",
+  "block.sweetconcrete.magenta_concrete_wall": "Magenta Concrete Wall",
+  "block.sweetconcrete.pink_concrete_wall": "Pink Concrete Wall",
+  "block.sweetconcrete.light_gray_concrete_wall": "Light Gray Concrete Wall",
+  "block.sweetconcrete.lime_concrete_wall": "Lime Concrete Wall",
+  "block.sweetconcrete.cyan_concrete_wall": "Cyan Concrete Wall",
+  "block.sweetconcrete.purple_concrete_wall": "Purple Concrete Wall",
+  "block.sweetconcrete.gray_concrete_wall": "Gray Concrete Wall"
 
 
 }

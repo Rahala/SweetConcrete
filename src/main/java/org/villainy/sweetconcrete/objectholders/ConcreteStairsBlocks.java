@@ -3,8 +3,6 @@ package org.villainy.sweetconcrete.objectholders;
 import net.minecraftforge.registries.ObjectHolder;
 import org.villainy.sweetconcrete.blocks.ConcreteStairsBlock;
 
-import java.util.stream.Stream;
-
 @ObjectHolder("sweetconcrete")
 public class ConcreteStairsBlocks {
 

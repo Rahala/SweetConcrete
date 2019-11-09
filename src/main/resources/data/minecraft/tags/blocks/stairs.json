@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "sweetconcrete:cyan_concrete_stairs",
+    "sweetconcrete:brown_concrete_stairs",
+    "sweetconcrete:yellow_concrete_stairs",
+    "sweetconcrete:purple_concrete_stairs",
+    "sweetconcrete:orange_concrete_stairs",
+    "sweetconcrete:gray_concrete_stairs",
+    "sweetconcrete:red_concrete_stairs",
+    "sweetconcrete:lime_concrete_stairs",
+    "sweetconcrete:light_blue_concrete_stairs",
+    "sweetconcrete:pink_concrete_stairs",
+    "sweetconcrete:magenta_concrete_stairs",
+    "sweetconcrete:white_concrete_stairs",
+    "sweetconcrete:light_gray_concrete_stairs",
+    "sweetconcrete:black_concrete_stairs",
+    "sweetconcrete:blue_concrete_stairs",
+    "sweetconcrete:green_concrete_stairs"
+  ]
+}

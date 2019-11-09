@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "sweetconcrete:purple_concrete_slab",
+    "sweetconcrete:light_blue_concrete_slab",
+    "sweetconcrete:lime_concrete_slab",
+    "sweetconcrete:yellow_concrete_slab",
+    "sweetconcrete:white_concrete_slab",
+    "sweetconcrete:blue_concrete_slab",
+    "sweetconcrete:black_concrete_slab",
+    "sweetconcrete:light_gray_concrete_slab",
+    "sweetconcrete:brown_concrete_slab",
+    "sweetconcrete:pink_concrete_slab",
+    "sweetconcrete:cyan_concrete_slab",
+    "sweetconcrete:gray_concrete_slab",
+    "sweetconcrete:red_concrete_slab",
+    "sweetconcrete:orange_concrete_slab",
+    "sweetconcrete:magenta_concrete_slab",
+    "sweetconcrete:green_concrete_slab"
+  ]
+}

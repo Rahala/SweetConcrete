@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "sweetconcrete:light_blue_concrete_wall",
+    "sweetconcrete:purple_concrete_wall",
+    "sweetconcrete:blue_concrete_wall",
+    "sweetconcrete:black_concrete_wall",
+    "sweetconcrete:lime_concrete_wall",
+    "sweetconcrete:yellow_concrete_wall",
+    "sweetconcrete:white_concrete_wall",
+    "sweetconcrete:brown_concrete_wall",
+    "sweetconcrete:pink_concrete_wall",
+    "sweetconcrete:light_gray_concrete_wall",
+    "sweetconcrete:orange_concrete_wall",
+    "sweetconcrete:magenta_concrete_wall",
+    "sweetconcrete:green_concrete_wall",
+    "sweetconcrete:cyan_concrete_wall",
+    "sweetconcrete:red_concrete_wall",
+    "sweetconcrete:gray_concrete_wall"
+  ]
+}
