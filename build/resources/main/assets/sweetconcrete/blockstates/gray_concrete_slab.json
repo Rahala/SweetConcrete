@@ -1,7 +1,0 @@
-{
-  "variants": {
-    "type=bottom": { "model": "sweetconcrete:block/gray_concrete_slab" },
-    "type=top": { "model": "sweetconcrete:block/gray_concrete_slab_top" },
-    "type=double": { "model": "block/gray_concrete" }
-  }
-}
