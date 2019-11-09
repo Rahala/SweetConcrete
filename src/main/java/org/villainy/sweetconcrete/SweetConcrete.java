@@ -12,18 +12,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.villainy.sweetconcrete.blocks.ConcreteButtonBlock;
-import org.villainy.sweetconcrete.blocks.ConcreteSlabBlock;
-import org.villainy.sweetconcrete.blocks.ConcreteStairsBlock;
-import org.villainy.sweetconcrete.blocks.ConcreteWallBlock;
-import org.villainy.sweetconcrete.items.ConcreteButtonBlockItem;
-import org.villainy.sweetconcrete.items.ConcreteSlabBlockItem;
-import org.villainy.sweetconcrete.items.ConcreteStairsBlockItem;
-import org.villainy.sweetconcrete.items.ConcreteWallBlockItem;
-import org.villainy.sweetconcrete.objectholders.ConcreteButtonBlocks;
-import org.villainy.sweetconcrete.objectholders.ConcreteSlabBlocks;
-import org.villainy.sweetconcrete.objectholders.ConcreteStairsBlocks;
-import org.villainy.sweetconcrete.objectholders.ConcreteWallBlocks;
+import org.villainy.sweetconcrete.blocks.*;
+import org.villainy.sweetconcrete.items.*;
+import org.villainy.sweetconcrete.objectholders.*;
 import org.villainy.sweetconcrete.proxy.ClientProxy;
 import org.villainy.sweetconcrete.proxy.IProxy;
 import org.villainy.sweetconcrete.proxy.CommonProxy;
@@ -63,6 +54,7 @@ public class SweetConcrete
                 blockRegistry.register(new ConcreteStairsBlock(dyeColor, slab.getDefaultState()));
                 blockRegistry.register(new ConcreteWallBlock(dyeColor));
                 blockRegistry.register(new ConcreteButtonBlock(dyeColor));
+                blockRegistry.register(new ConcretePressurePlateBlock(dyeColor));
             });
         }
 
@@ -148,6 +140,26 @@ public class SweetConcrete
                     ConcreteButtonBlocks.PURPLE,
                     ConcreteButtonBlocks.GRAY).forEach (block ->
                     itemRegistry.register(new ConcreteButtonBlockItem(block))
+            );
+
+            Stream.of(
+                    ConcretePressurePlateBlocks.RED,
+                    ConcretePressurePlateBlocks.YELLOW,
+                    ConcretePressurePlateBlocks.GREEN,
+                    ConcretePressurePlateBlocks.BLACK,
+                    ConcretePressurePlateBlocks.BROWN,
+                    ConcretePressurePlateBlocks.BLUE,
+                    ConcretePressurePlateBlocks.WHITE,
+                    ConcretePressurePlateBlocks.ORANGE,
+                    ConcretePressurePlateBlocks.LIGHT_BLUE,
+                    ConcretePressurePlateBlocks.MAGENTA,
+                    ConcretePressurePlateBlocks.PINK,
+                    ConcretePressurePlateBlocks.LIGHT_GRAY,
+                    ConcretePressurePlateBlocks.LIME,
+                    ConcretePressurePlateBlocks.CYAN,
+                    ConcretePressurePlateBlocks.PURPLE,
+                    ConcretePressurePlateBlocks.GRAY).forEach (block ->
+                    itemRegistry.register(new ConcretePressurePlateBlockItem(block))
             );
         }
     }

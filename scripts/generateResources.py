@@ -61,6 +61,7 @@ def generateTags():
     slabs = []
     stairs = []
     buttons = []
+    pressurePlates = []
 
     for file in os.listdir(RESOURCES_DIR + '/assets/sweetconcrete/blockstates'):
         if '.json' in file:
@@ -78,11 +79,13 @@ def generateTags():
     writeTagFile('items/slabs.json', slabs)
     writeTagFile('items/stairs.json', stairs)
     writeTagFile('items/buttons.json', buttons)
+    writeTagFile('items/wooden_pressure_plates.json', pressurePlates)
 
     writeTagFile('blocks/walls.json', walls)
     writeTagFile('blocks/slabs.json', slabs)
     writeTagFile('blocks/stairs.json', stairs)
     writeTagFile('blocks/buttons.json', buttons)
+    writeTagFile('blocks/wooden_pressure_plates.json', pressurePlates)
             
 
 # Slabs
@@ -126,11 +129,21 @@ buttonAssets = {
     'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_button.json'
 }
 
+pressurePlateAssets = {
+    'pressure_plate/blockstate_pressure_plate.j2' : 'assets/sweetconcrete/blockstates/%s_concrete_pressure_plate.json',
+    'pressure_plate/model_block_pressure_plate_down.j2': 'assets/sweetconcrete/models/block/%s_concrete_pressure_plate_down.json',
+    'pressure_plate/model_block_pressure_plate.j2': 'assets/sweetconcrete/models/block/%s_concrete_pressure_plate.json',
+    'pressure_plate/model_item_pressure_plate.j2': 'assets/sweetconcrete/models/item/%s_concrete_pressure_plate.json',
+    'pressure_plate/recipe_pressure_plate.j2': 'data/sweetconcrete/recipes/%s_concrete_pressure_plate.json',
+    'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_pressure_plate.json'
+}
+
 blockTypes = {
     'slab' : slabAssets,
     'stairs': stairsAssets,
     'wall': wallAssets,
     'button': buttonAssets,
+    'pressure_plate': pressurePlateAssets,
 }
 
 for blockType, assets in blockTypes.items():
