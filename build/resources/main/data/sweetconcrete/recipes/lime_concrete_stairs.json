@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "sweetconcrete:lime_concrete"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:lime_concrete_stairs",
+    "count": 4
+  }
+} 

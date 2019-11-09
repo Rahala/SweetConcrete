@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "red_concrete"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:red_concrete_slab",
+    "count": 6
+  }
+} 

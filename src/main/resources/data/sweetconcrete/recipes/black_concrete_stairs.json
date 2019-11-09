@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "sweetconcrete:black_concrete"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:black_concrete_stairs",
+    "count": 4
+  }
+} 
