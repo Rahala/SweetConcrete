@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:gray_concrete"
+    }
+  ],
+  "result": {
+    "item": "sweetconcrete:gray_concrete_button"
+  }
+}

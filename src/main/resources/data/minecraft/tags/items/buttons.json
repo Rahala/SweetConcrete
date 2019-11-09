@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "sweetconcrete:blue_concrete_button",
+    "sweetconcrete:green_concrete_button",
+    "sweetconcrete:black_concrete_button",
+    "sweetconcrete:magenta_concrete_button",
+    "sweetconcrete:white_concrete_button",
+    "sweetconcrete:light_gray_concrete_button",
+    "sweetconcrete:light_blue_concrete_button",
+    "sweetconcrete:pink_concrete_button",
+    "sweetconcrete:red_concrete_button",
+    "sweetconcrete:lime_concrete_button",
+    "sweetconcrete:orange_concrete_button",
+    "sweetconcrete:gray_concrete_button",
+    "sweetconcrete:purple_concrete_button",
+    "sweetconcrete:yellow_concrete_button",
+    "sweetconcrete:brown_concrete_button",
+    "sweetconcrete:cyan_concrete_button"
+  ]
+}

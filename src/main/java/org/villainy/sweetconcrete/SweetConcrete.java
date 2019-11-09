@@ -12,12 +12,15 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.villainy.sweetconcrete.blocks.ConcreteButtonBlock;
 import org.villainy.sweetconcrete.blocks.ConcreteSlabBlock;
 import org.villainy.sweetconcrete.blocks.ConcreteStairsBlock;
 import org.villainy.sweetconcrete.blocks.ConcreteWallBlock;
+import org.villainy.sweetconcrete.items.ConcreteButtonBlockItem;
 import org.villainy.sweetconcrete.items.ConcreteSlabBlockItem;
 import org.villainy.sweetconcrete.items.ConcreteStairsBlockItem;
 import org.villainy.sweetconcrete.items.ConcreteWallBlockItem;
+import org.villainy.sweetconcrete.objectholders.ConcreteButtonBlocks;
 import org.villainy.sweetconcrete.objectholders.ConcreteSlabBlocks;
 import org.villainy.sweetconcrete.objectholders.ConcreteStairsBlocks;
 import org.villainy.sweetconcrete.objectholders.ConcreteWallBlocks;
@@ -59,6 +62,7 @@ public class SweetConcrete
                 blockRegistry.register(slab);
                 blockRegistry.register(new ConcreteStairsBlock(dyeColor, slab.getDefaultState()));
                 blockRegistry.register(new ConcreteWallBlock(dyeColor));
+                blockRegistry.register(new ConcreteButtonBlock(dyeColor));
             });
         }
 
@@ -124,6 +128,26 @@ public class SweetConcrete
                     ConcreteWallBlocks.PURPLE,
                     ConcreteWallBlocks.GRAY).forEach (block ->
                     itemRegistry.register(new ConcreteWallBlockItem(block))
+            );
+
+            Stream.of(
+                    ConcreteButtonBlocks.RED,
+                    ConcreteButtonBlocks.YELLOW,
+                    ConcreteButtonBlocks.GREEN,
+                    ConcreteButtonBlocks.BLACK,
+                    ConcreteButtonBlocks.BROWN,
+                    ConcreteButtonBlocks.BLUE,
+                    ConcreteButtonBlocks.WHITE,
+                    ConcreteButtonBlocks.ORANGE,
+                    ConcreteButtonBlocks.LIGHT_BLUE,
+                    ConcreteButtonBlocks.MAGENTA,
+                    ConcreteButtonBlocks.PINK,
+                    ConcreteButtonBlocks.LIGHT_GRAY,
+                    ConcreteButtonBlocks.LIME,
+                    ConcreteButtonBlocks.CYAN,
+                    ConcreteButtonBlocks.PURPLE,
+                    ConcreteButtonBlocks.GRAY).forEach (block ->
+                    itemRegistry.register(new ConcreteButtonBlockItem(block))
             );
         }
     }

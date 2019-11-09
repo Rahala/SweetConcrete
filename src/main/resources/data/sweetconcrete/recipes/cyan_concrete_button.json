@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cyan_concrete"
+    }
+  ],
+  "result": {
+    "item": "sweetconcrete:cyan_concrete_button"
+  }
+}

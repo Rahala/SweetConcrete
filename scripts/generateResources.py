@@ -60,6 +60,7 @@ def generateTags():
     walls = []
     slabs = []
     stairs = []
+    buttons = []
 
     for file in os.listdir(RESOURCES_DIR + '/assets/sweetconcrete/blockstates'):
         if '.json' in file:
@@ -70,14 +71,18 @@ def generateTags():
                 slabs.append(name)
             elif '_stairs' in name:
                 stairs.append(name)
+            elif '_button' in name:
+                buttons.append(name)
 
     writeTagFile('items/walls.json', walls)
     writeTagFile('items/slabs.json', slabs)
     writeTagFile('items/stairs.json', stairs)
+    writeTagFile('items/buttons.json', buttons)
 
     writeTagFile('blocks/walls.json', walls)
     writeTagFile('blocks/slabs.json', slabs)
     writeTagFile('blocks/stairs.json', stairs)
+    writeTagFile('blocks/buttons.json', buttons)
             
 
 # Slabs
@@ -111,10 +116,21 @@ wallAssets = {
     'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_wall.json'
 }
 
+buttonAssets = {
+    'button/blockstate_button.j2' : 'assets/sweetconcrete/blockstates/%s_concrete_button.json',
+    'button/model_block_button_inventory.j2': 'assets/sweetconcrete/models/block/%s_concrete_button_inventory.json',
+    'button/model_block_button_pressed.j2': 'assets/sweetconcrete/models/block/%s_concrete_button_pressed.json',
+    'button/model_block_button.j2': 'assets/sweetconcrete/models/block/%s_concrete_button.json',
+    'button/model_item_button.j2': 'assets/sweetconcrete/models/item/%s_concrete_button.json',
+    'button/recipe_button.j2': 'data/sweetconcrete/recipes/%s_concrete_button.json',
+    'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_button.json'
+}
+
 blockTypes = {
     'slab' : slabAssets,
     'stairs': stairsAssets,
-    'wall': wallAssets
+    'wall': wallAssets,
+    'button': buttonAssets,
 }
 
 for blockType, assets in blockTypes.items():
