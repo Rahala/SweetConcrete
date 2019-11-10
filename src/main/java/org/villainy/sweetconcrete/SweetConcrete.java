@@ -3,16 +3,23 @@ package org.villainy.sweetconcrete;
 import net.minecraft.block.Block;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.villainy.sweetconcrete.blocks.*;
+import org.villainy.sweetconcrete.config.ConfigHelper;
+import org.villainy.sweetconcrete.config.ConfigHolder;
+import org.villainy.sweetconcrete.config.FlagRecipeCondition;
 import org.villainy.sweetconcrete.items.*;
 import org.villainy.sweetconcrete.objectholders.*;
 import org.villainy.sweetconcrete.proxy.ClientProxy;
@@ -31,6 +38,11 @@ public class SweetConcrete
     private static final Logger LOG = LogManager.getLogger();
 
     public SweetConcrete() {
+        final ModLoadingContext modLoadingContext = ModLoadingContext.get();
+
+        modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.COMMON_SPEC);
+
+        CraftingHelper.register(new FlagRecipeCondition.Serializer(new ResourceLocation(SweetConcrete.MODID, "flag")));
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(proxy::onFMLClientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(proxy::onFMLCommonSetup);
@@ -161,6 +173,14 @@ public class SweetConcrete
                     ConcretePressurePlateBlocks.GRAY).forEach (block ->
                     itemRegistry.register(new ConcretePressurePlateBlockItem(block))
             );
+        }
+
+        @SubscribeEvent
+        public static void onModConfigEvent(final ModConfig.ModConfigEvent event) {
+            final ModConfig config = event.getConfig();
+            if (config.getSpec() == ConfigHolder.COMMON_SPEC) {
+                ConfigHelper.bakeCommon(config);
+            }
         }
     }
 }

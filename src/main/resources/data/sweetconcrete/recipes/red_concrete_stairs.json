@@ -13,5 +13,11 @@
   "result": {
     "item": "sweetconcrete:red_concrete_stairs",
     "count": 4
-  }
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "stairs"
+    }
+  ]
 } 

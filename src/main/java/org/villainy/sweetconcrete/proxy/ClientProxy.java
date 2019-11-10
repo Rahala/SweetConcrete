@@ -11,28 +11,9 @@ import org.apache.logging.log4j.Logger;
 
 public class ClientProxy implements IProxy {
 
-    private static final Logger LOG = LogManager.getLogger();
+    @Override
+    public void onFMLClientSetup(FMLClientSetupEvent event) { }
 
     @Override
-    public void init() { }
-
-    @Override
-    public void onFMLClientSetup(FMLClientSetupEvent event) {
-        LOG.info("onFMLClientSetup");
-    }
-
-    @Override
-    public void onFMLCommonSetup(FMLCommonSetupEvent event) {
-        LOG.info("onFMLCommonSetup");
-    }
-
-    @Override
-    public World getClientWorld() {
-        return Minecraft.getInstance().world;
-    }
-
-    @Override
-    public PlayerEntity getClientPlayer() {
-        return Minecraft.getInstance().player;
-    }
+    public void onFMLCommonSetup(FMLCommonSetupEvent event) { }
 }

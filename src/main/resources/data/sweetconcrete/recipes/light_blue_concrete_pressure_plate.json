@@ -10,5 +10,11 @@
   },
   "result": {
     "item": "sweetconcrete:light_blue_concrete_pressure_plate"
-  }
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "pressure_plates"
+    }
+  ]
 }

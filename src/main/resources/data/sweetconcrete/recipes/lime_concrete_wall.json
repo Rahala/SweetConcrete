@@ -12,5 +12,11 @@
   "result": {
     "item": "sweetconcrete:lime_concrete_wall",
     "count": 6
-  }
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "walls"
+    }
+  ]
 } 

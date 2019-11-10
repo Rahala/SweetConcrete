@@ -7,5 +7,11 @@
   ],
   "result": {
     "item": "sweetconcrete:lime_concrete_button"
-  }
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "buttons"
+    }
+  ]
 }
