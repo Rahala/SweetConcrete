@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.StairsBlock;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -17,7 +18,7 @@ public class ConcreteStairsBlock extends StairsBlock {
     }
 
     public ConcreteStairsBlock(DyeColor dyeColor, BlockState blockState) {
-        super(blockState, Block.Properties.from(Blocks.WHITE_CONCRETE));
+        super(blockState, Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(1.8F));
         setRegistryName(dyeColor.getName() + "_concrete_stairs");
     }
 

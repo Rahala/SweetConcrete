@@ -1,8 +1,8 @@
 package org.villainy.sweetconcrete.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceBlock;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -16,7 +16,7 @@ public class ConcreteFenceBlock extends FenceBlock {
     }
 
     public ConcreteFenceBlock(DyeColor dyeColor) {
-        super(Block.Properties.from(Blocks.WHITE_CONCRETE).hardnessAndResistance(2.0F, 6.0F));
+        super(Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(2.0F, 6.0F));
         setRegistryName(dyeColor.getName() + "_concrete_fence");
     }
 

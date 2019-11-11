@@ -8,6 +8,9 @@
 * Recipes are now grouped by type in the recipe book
 * This mod's blocks now appear in the same color order as their vanilla equivalents
 
+#### Bug fixes
+* Blocks now appear in the correct color on the map
+
 ### v1.0.0
 
 First release!

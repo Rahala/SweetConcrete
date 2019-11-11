@@ -1,8 +1,8 @@
 package org.villainy.sweetconcrete.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.StoneButtonBlock;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -16,7 +16,7 @@ public class ConcreteButtonBlock extends StoneButtonBlock {
     }
 
     public ConcreteButtonBlock(DyeColor dyeColor) {
-        super(Block.Properties.from(Blocks.STONE_BUTTON));
+        super(Block.Properties.create(Material.ROCK, dyeColor));
         setRegistryName(dyeColor.getName() + "_concrete_button");
     }
 

@@ -3,6 +3,7 @@ package org.villainy.sweetconcrete.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.WallBlock;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -16,7 +17,7 @@ public class ConcreteWallBlock extends WallBlock {
     }
 
     public ConcreteWallBlock(DyeColor dyeColor) {
-        super(Block.Properties.from(Blocks.WHITE_CONCRETE));
+        super(Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(1.8F));
         setRegistryName(dyeColor.getName() + "_concrete_wall");
     }
 
