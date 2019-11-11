@@ -39,6 +39,9 @@ public class FlagRecipeCondition implements ICondition {
         if (flag.equals("pressure_plates")) {
             return SweetConcreteConfig.enablePressurePlates;
         }
+        if (flag.equals("fences")) {
+            return SweetConcreteConfig.enableFences;
+        }
         return true;
     }
 

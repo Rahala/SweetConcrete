@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "concrete_fences",
+  "pattern": [
+    "#-#",
+    "#-#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:brown_concrete"
+    },
+    "-": {
+      "item": "sweetconcrete:brown_concrete_slab"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:brown_concrete_fence",
+    "count": 6
+  }
+}

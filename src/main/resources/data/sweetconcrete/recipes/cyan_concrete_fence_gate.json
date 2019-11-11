@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "concrete_fence_gates",
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "key": {
+    "#": {
+      "item": "sweetconcrete:cyan_concrete_slab"
+    },
+    "W": {
+      "item": "minecraft:cyan_concrete"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:cyan_concrete_fence_gate"
+  }
+}
