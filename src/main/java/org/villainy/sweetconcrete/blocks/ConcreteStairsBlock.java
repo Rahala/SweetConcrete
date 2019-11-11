@@ -2,7 +2,6 @@ package org.villainy.sweetconcrete.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.DyeColor;
@@ -24,7 +23,7 @@ public class ConcreteStairsBlock extends StairsBlock {
 
     @Override
     public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-        if(group == ItemGroup.SEARCH || isEnabled())
+        if (group == ItemGroup.SEARCH || isEnabled())
             super.fillItemGroup(group, items);
     }
 }

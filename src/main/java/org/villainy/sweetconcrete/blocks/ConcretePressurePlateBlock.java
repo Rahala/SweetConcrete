@@ -1,7 +1,6 @@
 package org.villainy.sweetconcrete.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.DyeColor;
@@ -26,7 +25,7 @@ public class ConcretePressurePlateBlock extends PressurePlateBlock {
 
     @Override
     public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-        if(group == ItemGroup.SEARCH || isEnabled())
+        if (group == ItemGroup.SEARCH || isEnabled())
             super.fillItemGroup(group, items);
     }
 }

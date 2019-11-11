@@ -25,7 +25,7 @@ public class ConcreteFenceGateBlock extends FenceGateBlock {
 
     @Override
     public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-        if(group == ItemGroup.SEARCH || isEnabled())
+        if (group == ItemGroup.SEARCH || isEnabled())
             super.fillItemGroup(group, items);
     }
 }

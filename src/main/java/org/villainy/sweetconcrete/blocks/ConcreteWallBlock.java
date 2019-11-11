@@ -1,7 +1,6 @@
 package org.villainy.sweetconcrete.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.DyeColor;
@@ -23,7 +22,7 @@ public class ConcreteWallBlock extends WallBlock {
 
     @Override
     public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-        if(group == ItemGroup.SEARCH || isEnabled())
+        if (group == ItemGroup.SEARCH || isEnabled())
             super.fillItemGroup(group, items);
     }
 }
