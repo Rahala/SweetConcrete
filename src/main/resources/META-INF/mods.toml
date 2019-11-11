@@ -6,7 +6,6 @@ issueTrackerURL="https://github.com/Rahala/SweetConcrete/issues" #optional
 modId="sweetconcrete"
 version="1.14.4-1.1.0"
 displayName="Sweet Concrete"
-displayURL="http://sweetconcrete.villainy.org"
 authors="Rahala" #optional
 description='''
 All the concrete blocks you can eat.
