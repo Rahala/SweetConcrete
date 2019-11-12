@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "concrete_ladders",
+  "pattern": [
+    "# #",
+    "###",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "sweetconcrete:cyan_concrete_slab"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:cyan_concrete_ladder",
+    "count": 6
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "ladders"
+    }
+  ]
+}

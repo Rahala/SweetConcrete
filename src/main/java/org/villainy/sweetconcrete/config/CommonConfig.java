@@ -11,6 +11,7 @@ final class CommonConfig {
     final ForgeConfigSpec.BooleanValue enableButtons;
     final ForgeConfigSpec.BooleanValue enablePressurePlates;
     final ForgeConfigSpec.BooleanValue enableFences;
+    final ForgeConfigSpec.BooleanValue enableLadders;
 
     CommonConfig(final ForgeConfigSpec.Builder builder) {
         builder.push("general");
@@ -38,6 +39,10 @@ final class CommonConfig {
                 .comment("Enable concrete fences")
                 .translation(SweetConcrete.MODID + ".config.enableFences")
                 .define("enableFences", true);
+        enableLadders = builder
+                .comment("Enable concrete ladders")
+                .translation(SweetConcrete.MODID + ".config.enableLadders")
+                .define("enableLadders", true);
         builder.pop();
     }
 

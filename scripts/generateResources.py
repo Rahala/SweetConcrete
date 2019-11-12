@@ -145,6 +145,14 @@ fenceGateAssets = {
     'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_fence_gate.json'
 }
 
+ladderAssets = {
+    'ladder/blockstate_ladder.j2' : 'assets/sweetconcrete/blockstates/%s_concrete_ladder.json',
+    'ladder/model_block_ladder.j2': 'assets/sweetconcrete/models/block/%s_concrete_ladder.json',
+    'ladder/model_item_ladder.j2': 'assets/sweetconcrete/models/item/%s_concrete_ladder.json',
+    'ladder/recipe_ladder.j2': 'data/sweetconcrete/recipes/%s_concrete_ladder.json',
+    'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_ladder.json'
+}
+
 buttonAssets = {
     'button/blockstate_button.j2' : 'assets/sweetconcrete/blockstates/%s_concrete_button.json',
     'button/model_block_button_inventory.j2': 'assets/sweetconcrete/models/block/%s_concrete_button_inventory.json',
@@ -171,7 +179,8 @@ blockTypes = {
     'button': buttonAssets,
     'pressure_plate': pressurePlateAssets,
     'fence': fenceAssets,
-    'fence_gate': fenceGateAssets
+    'fence_gate': fenceGateAssets,
+    'ladder': ladderAssets
 }
 
 for blockType, assets in blockTypes.items():

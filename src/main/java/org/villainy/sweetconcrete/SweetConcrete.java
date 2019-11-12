@@ -70,6 +70,7 @@ public class SweetConcrete
                 blockRegistry.register(new ConcretePressurePlateBlock(dyeColor));
                 blockRegistry.register(new ConcreteFenceBlock(dyeColor));
                 blockRegistry.register(new ConcreteFenceGateBlock(dyeColor));
+                blockRegistry.register(new ConcreteLadderBlock(dyeColor));
             });
         }
 
@@ -220,6 +221,27 @@ public class SweetConcrete
                     ConcreteFenceGateBlocks.GREEN,
                     ConcreteFenceGateBlocks.RED,
                     ConcreteFenceGateBlocks.BLACK
+            ).forEach (block ->
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
+            );
+
+            Stream.of(
+                    ConcreteLadderBlocks.WHITE,
+                    ConcreteLadderBlocks.ORANGE,
+                    ConcreteLadderBlocks.MAGENTA,
+                    ConcreteLadderBlocks.LIGHT_BLUE,
+                    ConcreteLadderBlocks.YELLOW,
+                    ConcreteLadderBlocks.LIME,
+                    ConcreteLadderBlocks.PINK,
+                    ConcreteLadderBlocks.GRAY,
+                    ConcreteLadderBlocks.LIGHT_GRAY,
+                    ConcreteLadderBlocks.CYAN,
+                    ConcreteLadderBlocks.PURPLE,
+                    ConcreteLadderBlocks.BLUE,
+                    ConcreteLadderBlocks.BROWN,
+                    ConcreteLadderBlocks.GREEN,
+                    ConcreteLadderBlocks.RED,
+                    ConcreteLadderBlocks.BLACK
             ).forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
             );

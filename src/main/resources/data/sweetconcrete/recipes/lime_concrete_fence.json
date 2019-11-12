@@ -16,5 +16,11 @@
   "result": {
     "item": "sweetconcrete:lime_concrete_fence",
     "count": 6
-  }
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "fences"
+    }
+  ]
 }

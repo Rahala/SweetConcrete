@@ -15,5 +15,11 @@
   },
   "result": {
     "item": "sweetconcrete:lime_concrete_fence_gate"
-  }
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "fences"
+    }
+  ]
 }

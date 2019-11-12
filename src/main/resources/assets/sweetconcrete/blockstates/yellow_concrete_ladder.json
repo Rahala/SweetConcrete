@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "sweetconcrete:block/yellow_concrete_ladder"          },
+    "facing=south": { "model": "sweetconcrete:block/yellow_concrete_ladder", "y":180 },
+    "facing=west":  { "model": "sweetconcrete:block/yellow_concrete_ladder", "y":270 },
+    "facing=east":  { "model": "sweetconcrete:block/yellow_concrete_ladder", "y":90  }
+  }
+}

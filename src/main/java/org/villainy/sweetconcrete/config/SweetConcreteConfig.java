@@ -8,5 +8,6 @@ public final class SweetConcreteConfig {
     public static boolean enableButtons;
     public static boolean enablePressurePlates;
     public static boolean enableFences;
+    public static boolean enableLadders;
 
 }
