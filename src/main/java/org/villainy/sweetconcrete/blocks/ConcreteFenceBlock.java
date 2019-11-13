@@ -8,6 +8,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import org.villainy.sweetconcrete.config.SweetConcreteConfig;
+import org.villainy.sweetconcrete.objectholders.ConcreteFenceBlocks;
+
+import java.util.stream.Stream;
 
 public class ConcreteFenceBlock extends FenceBlock {
 
@@ -24,5 +27,26 @@ public class ConcreteFenceBlock extends FenceBlock {
     public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
         if (group == ItemGroup.SEARCH || isEnabled())
             super.fillItemGroup(group, items);
+    }
+
+    public static Stream<Block> allBlocks() {
+        return Stream.of(
+                ConcreteFenceBlocks.WHITE,
+                ConcreteFenceBlocks.ORANGE,
+                ConcreteFenceBlocks.MAGENTA,
+                ConcreteFenceBlocks.LIGHT_BLUE,
+                ConcreteFenceBlocks.YELLOW,
+                ConcreteFenceBlocks.LIME,
+                ConcreteFenceBlocks.PINK,
+                ConcreteFenceBlocks.GRAY,
+                ConcreteFenceBlocks.LIGHT_GRAY,
+                ConcreteFenceBlocks.CYAN,
+                ConcreteFenceBlocks.PURPLE,
+                ConcreteFenceBlocks.BLUE,
+                ConcreteFenceBlocks.BROWN,
+                ConcreteFenceBlocks.GREEN,
+                ConcreteFenceBlocks.RED,
+                ConcreteFenceBlocks.BLACK
+        );
     }
 }

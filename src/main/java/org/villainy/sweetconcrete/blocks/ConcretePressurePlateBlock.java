@@ -8,6 +8,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import org.villainy.sweetconcrete.config.SweetConcreteConfig;
+import org.villainy.sweetconcrete.objectholders.ConcretePressurePlateBlocks;
+
+import java.util.stream.Stream;
 
 public class ConcretePressurePlateBlock extends PressurePlateBlock {
 
@@ -27,5 +30,26 @@ public class ConcretePressurePlateBlock extends PressurePlateBlock {
     public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
         if (group == ItemGroup.SEARCH || isEnabled())
             super.fillItemGroup(group, items);
+    }
+
+    public static Stream<Block> allBlocks() {
+        return Stream.of(
+                ConcretePressurePlateBlocks.WHITE,
+                ConcretePressurePlateBlocks.ORANGE,
+                ConcretePressurePlateBlocks.MAGENTA,
+                ConcretePressurePlateBlocks.LIGHT_BLUE,
+                ConcretePressurePlateBlocks.YELLOW,
+                ConcretePressurePlateBlocks.LIME,
+                ConcretePressurePlateBlocks.PINK,
+                ConcretePressurePlateBlocks.GRAY,
+                ConcretePressurePlateBlocks.LIGHT_GRAY,
+                ConcretePressurePlateBlocks.CYAN,
+                ConcretePressurePlateBlocks.PURPLE,
+                ConcretePressurePlateBlocks.BLUE,
+                ConcretePressurePlateBlocks.BROWN,
+                ConcretePressurePlateBlocks.GREEN,
+                ConcretePressurePlateBlocks.RED,
+                ConcretePressurePlateBlocks.BLACK
+        );
     }
 }

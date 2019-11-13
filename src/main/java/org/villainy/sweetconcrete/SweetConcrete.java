@@ -22,7 +22,6 @@ import org.villainy.sweetconcrete.config.ConfigHelper;
 import org.villainy.sweetconcrete.config.ConfigHolder;
 import org.villainy.sweetconcrete.config.FlagRecipeCondition;
 import org.villainy.sweetconcrete.items.helper.BlockItemHelper;
-import org.villainy.sweetconcrete.objectholders.*;
 import org.villainy.sweetconcrete.proxy.ClientProxy;
 import org.villainy.sweetconcrete.proxy.IProxy;
 import org.villainy.sweetconcrete.proxy.CommonProxy;
@@ -48,12 +47,9 @@ public class SweetConcrete
         FMLJavaModLoadingContext.get().getModEventBus().addListener(proxy::onFMLClientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(proxy::onFMLCommonSetup);
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
-    // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
@@ -78,171 +74,28 @@ public class SweetConcrete
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             final IForgeRegistry<Item> itemRegistry = event.getRegistry();
 
-            Stream.of(
-                    ConcreteSlabBlocks.WHITE,
-                    ConcreteSlabBlocks.ORANGE,
-                    ConcreteSlabBlocks.MAGENTA,
-                    ConcreteSlabBlocks.LIGHT_BLUE,
-                    ConcreteSlabBlocks.YELLOW,
-                    ConcreteSlabBlocks.LIME,
-                    ConcreteSlabBlocks.PINK,
-                    ConcreteSlabBlocks.GRAY,
-                    ConcreteSlabBlocks.LIGHT_GRAY,
-                    ConcreteSlabBlocks.CYAN,
-                    ConcreteSlabBlocks.PURPLE,
-                    ConcreteSlabBlocks.BLUE,
-                    ConcreteSlabBlocks.BROWN,
-                    ConcreteSlabBlocks.GREEN,
-                    ConcreteSlabBlocks.RED,
-                    ConcreteSlabBlocks.BLACK
-            ).forEach (block ->
+            ConcreteSlabBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.BUILDING_BLOCKS))
             );
-
-            Stream.of(
-                    ConcreteStairsBlocks.WHITE,
-                    ConcreteStairsBlocks.ORANGE,
-                    ConcreteStairsBlocks.MAGENTA,
-                    ConcreteStairsBlocks.LIGHT_BLUE,
-                    ConcreteStairsBlocks.YELLOW,
-                    ConcreteStairsBlocks.LIME,
-                    ConcreteStairsBlocks.PINK,
-                    ConcreteStairsBlocks.GRAY,
-                    ConcreteStairsBlocks.LIGHT_GRAY,
-                    ConcreteStairsBlocks.CYAN,
-                    ConcreteStairsBlocks.PURPLE,
-                    ConcreteStairsBlocks.BLUE,
-                    ConcreteStairsBlocks.BROWN,
-                    ConcreteStairsBlocks.GREEN,
-                    ConcreteStairsBlocks.RED,
-                    ConcreteStairsBlocks.BLACK
-            ).forEach (block ->
+            ConcreteStairsBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.BUILDING_BLOCKS))
             );
-
-            Stream.of(
-                    ConcreteWallBlocks.WHITE,
-                    ConcreteWallBlocks.ORANGE,
-                    ConcreteWallBlocks.MAGENTA,
-                    ConcreteWallBlocks.LIGHT_BLUE,
-                    ConcreteWallBlocks.YELLOW,
-                    ConcreteWallBlocks.LIME,
-                    ConcreteWallBlocks.PINK,
-                    ConcreteWallBlocks.GRAY,
-                    ConcreteWallBlocks.LIGHT_GRAY,
-                    ConcreteWallBlocks.CYAN,
-                    ConcreteWallBlocks.PURPLE,
-                    ConcreteWallBlocks.BLUE,
-                    ConcreteWallBlocks.BROWN,
-                    ConcreteWallBlocks.GREEN,
-                    ConcreteWallBlocks.RED,
-                    ConcreteWallBlocks.BLACK
-            ).forEach (block ->
+            ConcreteWallBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
             );
-
-            Stream.of(
-                    ConcreteButtonBlocks.WHITE,
-                    ConcreteButtonBlocks.ORANGE,
-                    ConcreteButtonBlocks.MAGENTA,
-                    ConcreteButtonBlocks.LIGHT_BLUE,
-                    ConcreteButtonBlocks.YELLOW,
-                    ConcreteButtonBlocks.LIME,
-                    ConcreteButtonBlocks.PINK,
-                    ConcreteButtonBlocks.GRAY,
-                    ConcreteButtonBlocks.LIGHT_GRAY,
-                    ConcreteButtonBlocks.CYAN,
-                    ConcreteButtonBlocks.PURPLE,
-                    ConcreteButtonBlocks.BLUE,
-                    ConcreteButtonBlocks.BROWN,
-                    ConcreteButtonBlocks.GREEN,
-                    ConcreteButtonBlocks.RED,
-                    ConcreteButtonBlocks.BLACK
-            ).forEach (block ->
+            ConcreteButtonBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.REDSTONE))
             );
-
-            Stream.of(
-                    ConcretePressurePlateBlocks.WHITE,
-                    ConcretePressurePlateBlocks.ORANGE,
-                    ConcretePressurePlateBlocks.MAGENTA,
-                    ConcretePressurePlateBlocks.LIGHT_BLUE,
-                    ConcretePressurePlateBlocks.YELLOW,
-                    ConcretePressurePlateBlocks.LIME,
-                    ConcretePressurePlateBlocks.PINK,
-                    ConcretePressurePlateBlocks.GRAY,
-                    ConcretePressurePlateBlocks.LIGHT_GRAY,
-                    ConcretePressurePlateBlocks.CYAN,
-                    ConcretePressurePlateBlocks.PURPLE,
-                    ConcretePressurePlateBlocks.BLUE,
-                    ConcretePressurePlateBlocks.BROWN,
-                    ConcretePressurePlateBlocks.GREEN,
-                    ConcretePressurePlateBlocks.RED,
-                    ConcretePressurePlateBlocks.BLACK
-            ).forEach (block ->
+            ConcretePressurePlateBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.REDSTONE))
             );
-
-            Stream.of(
-                    ConcreteFenceBlocks.WHITE,
-                    ConcreteFenceBlocks.ORANGE,
-                    ConcreteFenceBlocks.MAGENTA,
-                    ConcreteFenceBlocks.LIGHT_BLUE,
-                    ConcreteFenceBlocks.YELLOW,
-                    ConcreteFenceBlocks.LIME,
-                    ConcreteFenceBlocks.PINK,
-                    ConcreteFenceBlocks.GRAY,
-                    ConcreteFenceBlocks.LIGHT_GRAY,
-                    ConcreteFenceBlocks.CYAN,
-                    ConcreteFenceBlocks.PURPLE,
-                    ConcreteFenceBlocks.BLUE,
-                    ConcreteFenceBlocks.BROWN,
-                    ConcreteFenceBlocks.GREEN,
-                    ConcreteFenceBlocks.RED,
-                    ConcreteFenceBlocks.BLACK
-            ).forEach (block ->
+            ConcreteFenceBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
             );
-
-            Stream.of(
-                    ConcreteFenceGateBlocks.WHITE,
-                    ConcreteFenceGateBlocks.ORANGE,
-                    ConcreteFenceGateBlocks.MAGENTA,
-                    ConcreteFenceGateBlocks.LIGHT_BLUE,
-                    ConcreteFenceGateBlocks.YELLOW,
-                    ConcreteFenceGateBlocks.LIME,
-                    ConcreteFenceGateBlocks.PINK,
-                    ConcreteFenceGateBlocks.GRAY,
-                    ConcreteFenceGateBlocks.LIGHT_GRAY,
-                    ConcreteFenceGateBlocks.CYAN,
-                    ConcreteFenceGateBlocks.PURPLE,
-                    ConcreteFenceGateBlocks.BLUE,
-                    ConcreteFenceGateBlocks.BROWN,
-                    ConcreteFenceGateBlocks.GREEN,
-                    ConcreteFenceGateBlocks.RED,
-                    ConcreteFenceGateBlocks.BLACK
-            ).forEach (block ->
+            ConcreteFenceGateBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
             );
-
-            Stream.of(
-                    ConcreteLadderBlocks.WHITE,
-                    ConcreteLadderBlocks.ORANGE,
-                    ConcreteLadderBlocks.MAGENTA,
-                    ConcreteLadderBlocks.LIGHT_BLUE,
-                    ConcreteLadderBlocks.YELLOW,
-                    ConcreteLadderBlocks.LIME,
-                    ConcreteLadderBlocks.PINK,
-                    ConcreteLadderBlocks.GRAY,
-                    ConcreteLadderBlocks.LIGHT_GRAY,
-                    ConcreteLadderBlocks.CYAN,
-                    ConcreteLadderBlocks.PURPLE,
-                    ConcreteLadderBlocks.BLUE,
-                    ConcreteLadderBlocks.BROWN,
-                    ConcreteLadderBlocks.GREEN,
-                    ConcreteLadderBlocks.RED,
-                    ConcreteLadderBlocks.BLACK
-            ).forEach (block ->
+            ConcreteLadderBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
             );
         }
