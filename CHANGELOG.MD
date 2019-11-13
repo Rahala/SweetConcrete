@@ -1,4 +1,12 @@
-### v1.1.0 Current Version
+### v1.2.0 Current Version
+
+#### New features
+* Concrete ladders
+
+#### Bug fixes
+* Disabling fences now correctly disables fence and fence gate recipes
+
+### v1.1.0
 
 #### New features
 * Concrete fences
