@@ -172,6 +172,13 @@ pressurePlateAssets = {
     'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_pressure_plate.json'
 }
 
+cakeAssets = {
+    'cake/blockstate_cake.j2' : 'assets/sweetconcrete/blockstates/concrete_cake.json',
+    'cake/model_block_cake.j2': 'assets/sweetconcrete/models/block/concrete_cake.json',
+    'cake/model_item_cake.j2': 'assets/sweetconcrete/models/item/concrete_cake.json',
+    'cake/recipe_cake.j2': 'data/sweetconcrete/recipes/concrete_cake.json',
+}
+
 blockTypes = {
     'slab' : slabAssets,
     'stairs': stairsAssets,
@@ -180,11 +187,23 @@ blockTypes = {
     'pressure_plate': pressurePlateAssets,
     'fence': fenceAssets,
     'fence_gate': fenceGateAssets,
-    'ladder': ladderAssets
+    'ladder': ladderAssets,
 }
 
+uncoloredBlockTypes = {
+    'cake': cakeAssets,
+}
+
+
+# Colored variants
 for blockType, assets in blockTypes.items():
     for template, output in assets.items():
         generateBlockAllColors(blockType, template, output)
+
+# Uncolored variants
+for blockType, assets in uncoloredBlockTypes.items():
+    for template, output in assets.items():
+        generateBlock("concrete_" + blockType, blockType, template, output)
+
 
 generateTags()

@@ -68,6 +68,8 @@ public class SweetConcrete
                 blockRegistry.register(new ConcreteFenceGateBlock(dyeColor));
                 blockRegistry.register(new ConcreteLadderBlock(dyeColor));
             });
+
+            blockRegistry.register(new ConcreteCakeBlock());
         }
 
         @SubscribeEvent
@@ -97,6 +99,9 @@ public class SweetConcrete
             );
             ConcreteLadderBlock.allBlocks().forEach (block ->
                     itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
+            );
+            ConcreteCakeBlock.allBlocks().forEach (block ->
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.FOOD))
             );
         }
 
