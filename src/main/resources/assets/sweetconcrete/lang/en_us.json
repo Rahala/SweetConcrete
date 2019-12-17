@@ -135,5 +135,22 @@
   "block.sweetconcrete.purple_concrete_ladder": "Purple Concrete Ladder",
   "block.sweetconcrete.gray_concrete_ladder": "Gray Concrete Ladder",
 
+  "block.sweetconcrete.red_concrete_sign": "Red Concrete Sign",
+  "block.sweetconcrete.yellow_concrete_sign": "Yellow Concrete Sign",
+  "block.sweetconcrete.green_concrete_sign": "Green Concrete Sign",
+  "block.sweetconcrete.black_concrete_sign": "Black Concrete Sign",
+  "block.sweetconcrete.brown_concrete_sign": "Brown Concrete Sign",
+  "block.sweetconcrete.blue_concrete_sign": "Blue Concrete Sign",
+  "block.sweetconcrete.white_concrete_sign": "White Concrete Sign",
+  "block.sweetconcrete.orange_concrete_sign": "Orange Concrete Sign",
+  "block.sweetconcrete.light_blue_concrete_sign": "Light Blue Concrete Sign",
+  "block.sweetconcrete.magenta_concrete_sign": "Magenta Concrete Sign",
+  "block.sweetconcrete.pink_concrete_sign": "Pink Concrete Sign",
+  "block.sweetconcrete.light_gray_concrete_sign": "Light Gray Concrete Sign",
+  "block.sweetconcrete.lime_concrete_sign": "Lime Concrete Sign",
+  "block.sweetconcrete.cyan_concrete_sign": "Cyan Concrete Sign",
+  "block.sweetconcrete.purple_concrete_sign": "Purple Concrete Sign",
+  "block.sweetconcrete.gray_concrete_sign": "Gray Concrete Sign",
+
   "block.sweetconcrete.concrete_cake": "Concrete Cake"
 }

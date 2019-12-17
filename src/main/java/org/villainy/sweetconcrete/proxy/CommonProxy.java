@@ -1,16 +1,19 @@
 package org.villainy.sweetconcrete.proxy;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import org.villainy.sweetconcrete.SweetConcrete;
-import org.villainy.sweetconcrete.config.FlagRecipeCondition;
+import org.villainy.sweetconcrete.tileEntities.ConcreteSignTileEntity;
 
 public class CommonProxy implements IProxy {
+
+    public static TileEntityType<ConcreteSignTileEntity> concreteSignType;
+
+    @Override
+    public void init() {
+
+    }
 
     @Override
     public void onFMLClientSetup(FMLClientSetupEvent event) {
@@ -18,6 +21,10 @@ public class CommonProxy implements IProxy {
 
     @Override
     public void onFMLCommonSetup(FMLCommonSetupEvent event) {
+    }
+
+    @Override
+    public void openSignButtonGui(BlockPos pos) {
     }
 
 }

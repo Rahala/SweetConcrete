@@ -21,5 +21,11 @@
   },
   "result": {
     "item": "sweetconcrete:concrete_cake"
-  }
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "cake"
+    }
+  ]
 }

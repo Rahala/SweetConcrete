@@ -17,6 +17,8 @@ public final class ConfigHelper {
         SweetConcreteConfig.enablePressurePlates = ConfigHolder.COMMON.enablePressurePlates.get();
         SweetConcreteConfig.enableFences = ConfigHolder.COMMON.enableFences.get();
         SweetConcreteConfig.enableLadders = ConfigHolder.COMMON.enableLadders.get();
+        SweetConcreteConfig.enableCake = ConfigHolder.COMMON.enableCake.get();
+        SweetConcreteConfig.enableSigns = ConfigHolder.COMMON.enableSigns.get();
     }
 
     public static void setValueAndSave(final ModConfig modConfig, final String path, final Object newValue) {

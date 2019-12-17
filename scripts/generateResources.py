@@ -63,11 +63,13 @@ def generateTags():
     buttons = []
     pressurePlates = []
     fences = []
+    standingSigns = []
+    wallSigns = []
 
     for file in os.listdir(RESOURCES_DIR + '/assets/sweetconcrete/blockstates'):
         if '.json' in file:
             name = file.replace('.json', '')
-            if '_wall' in name:
+            if '_wall' in name and 'sign' not in name:
                 walls.append(name)
             elif ('_slab' in name):
                 slabs.append(name)
@@ -84,6 +86,7 @@ def generateTags():
     writeTagFile('items/buttons.json', buttons)
     writeTagFile('items/wooden_pressure_plates.json', pressurePlates)
     writeTagFile('items/fences.json', fences)
+
 
     writeTagFile('blocks/walls.json', walls)
     writeTagFile('blocks/slabs.json', slabs)
@@ -172,6 +175,14 @@ pressurePlateAssets = {
     'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_pressure_plate.json'
 }
 
+signAssets = {
+    'sign/blockstate_sign.j2' : 'assets/sweetconcrete/blockstates/%s_concrete_sign.json',
+    'sign/model_block_sign.j2' : 'assets/sweetconcrete/models/block/%s_concrete_sign.json',
+    'sign/model_item_sign.j2': 'assets/sweetconcrete/models/item/%s_concrete_sign.json',
+    'sign/recipe_sign.j2': 'data/sweetconcrete/recipes/%s_concrete_sign.json',
+    'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_sign.json'
+}
+
 cakeAssets = {
     'cake/blockstate_cake.j2' : 'assets/sweetconcrete/blockstates/concrete_cake.json',
     'cake/model_block_cake.j2': 'assets/sweetconcrete/models/block/concrete_cake.json',
@@ -188,6 +199,7 @@ blockTypes = {
     'fence': fenceAssets,
     'fence_gate': fenceGateAssets,
     'ladder': ladderAssets,
+    'sign': signAssets
 }
 
 uncoloredBlockTypes = {

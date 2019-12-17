@@ -6,6 +6,7 @@ import net.minecraft.block.FallingBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
@@ -13,6 +14,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -21,6 +23,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import org.villainy.sweetconcrete.config.SweetConcreteConfig;
 import org.villainy.sweetconcrete.objectholders.ConcreteCakeBlocks;
 
 import java.util.stream.Stream;
@@ -30,10 +33,20 @@ public class ConcreteCakeBlock extends FallingBlock {
     public static final IntegerProperty BITES = BlockStateProperties.BITES_0_6;
     protected static final VoxelShape[] SHAPES = new VoxelShape[]{Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D), Block.makeCuboidShape(3.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D), Block.makeCuboidShape(5.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D), Block.makeCuboidShape(7.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D), Block.makeCuboidShape(9.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D), Block.makeCuboidShape(11.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D), Block.makeCuboidShape(13.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D)};
 
+    private boolean isEnabled() {
+        return SweetConcreteConfig.enableCake;
+    }
+
     public ConcreteCakeBlock() {
         super(Block.Properties.create(Material.ROCK));
         this.setDefaultState(this.stateContainer.getBaseState().with(BITES, 0));
         setRegistryName("concrete_cake");
+    }
+
+    @Override
+    public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
+        if(group == ItemGroup.SEARCH || isEnabled())
+            super.fillItemGroup(group, items);
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

@@ -45,6 +45,12 @@ public class FlagRecipeCondition implements ICondition {
         if (flag.equals("ladders")) {
             return SweetConcreteConfig.enableLadders;
         }
+        if (flag.equals("cake")) {
+            return SweetConcreteConfig.enableCake;
+        }
+        if (flag.equals("signs")) {
+            return SweetConcreteConfig.enableSigns;
+        }
         return true;
     }
 
