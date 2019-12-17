@@ -1,4 +1,12 @@
-### v1.3.0 Current Version
+### v1.4.0 Current Version
+
+#### New features
+* Concrete signs
+
+#### Enhancements
+* Added config option for cake
+
+### v1.3.0
 
 #### New features
 * Concrete cake
