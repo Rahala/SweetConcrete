@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gray_concrete"
+    },
+    "X": {
+      "item": "sweetconcrete:white_concrete_slab"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:gray_concrete_lever"
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "levers"
+    }
+  ]
+}

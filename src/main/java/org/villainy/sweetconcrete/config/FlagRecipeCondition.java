@@ -51,6 +51,9 @@ public class FlagRecipeCondition implements ICondition {
         if (flag.equals("signs")) {
             return SweetConcreteConfig.enableSigns;
         }
+        if (flag.equals("levers")) {
+            return SweetConcreteConfig.enableLevers;
+        }
         return true;
     }
 
