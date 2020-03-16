@@ -1,4 +1,12 @@
-### v1.4.0 Current Version
+### v1.5.0 Current Version
+
+#### New features
+* Concrete levers
+
+#### Enhancements
+* Added config option for cake
+
+### v1.4.0
 
 #### New features
 * Concrete signs
