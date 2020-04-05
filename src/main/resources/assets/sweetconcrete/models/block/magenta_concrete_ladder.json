@@ -1,5 +1,5 @@
 {
-	"parent": "block/cube",
+	"parent": "block/block",
 	"textures": {
 		"o": "block/magenta_concrete",
 		"particle": "block/magenta_concrete"

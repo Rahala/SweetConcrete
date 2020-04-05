@@ -13,6 +13,7 @@ import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -49,33 +50,40 @@ public class ConcreteCakeBlock extends FallingBlock {
             super.fillItemGroup(group, items);
     }
 
+    @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         return SHAPES[state.get(BITES)];
     }
 
-    public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-        if (!worldIn.isRemote) {
-            return this.eatCake(worldIn, pos, state, player);
-        } else {
-            ItemStack itemstack = player.getHeldItem(handIn);
-            return this.eatCake(worldIn, pos, state, player) || itemstack.isEmpty();
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+        if (worldIn.isRemote) {
+            ItemStack itemStack = player.getHeldItem(handIn);
+            if (this.eatCake(worldIn, pos, state, player) == ActionResultType.SUCCESS) {
+                return ActionResultType.SUCCESS;
+            }
+
+            if (itemStack.isEmpty()) {
+                return ActionResultType.CONSUME;
+            }
         }
+
+        return this.eatCake(worldIn, pos, state, player);
     }
 
-    private boolean eatCake(IWorld worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+    private ActionResultType eatCake(IWorld worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!player.canEat(false)) {
-            return false;
+            return ActionResultType.PASS;
         } else {
             player.addStat(Stats.EAT_CAKE_SLICE);
             player.getFoodStats().addStats(2, 0.1F);
-            int i = state.get(BITES);
-            if (i < 6) {
-                worldIn.setBlockState(pos, state.with(BITES, Integer.valueOf(i + 1)), 3);
+            int bites = state.get(BITES);
+            if (bites < 6) {
+                worldIn.setBlockState(pos, state.with(BITES, bites + 1), 3);
             } else {
                 worldIn.removeBlock(pos, false);
             }
 
-            return true;
+            return ActionResultType.SUCCESS;
         }
     }
 

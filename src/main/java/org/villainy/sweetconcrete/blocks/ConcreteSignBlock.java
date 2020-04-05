@@ -46,7 +46,7 @@ public class ConcreteSignBlock extends AbstractSignBlock {
         super(Block.Properties.create(Material.ROCK, dyeColor)
                 .doesNotBlockMovement()
                 .hardnessAndResistance(1.0F)
-                .sound(SoundType.STONE));
+                .sound(SoundType.STONE), WoodType.OAK);
         this.dyeColor = dyeColor;
         setRegistryName(dyeColor.getName() + "_concrete_sign");
     }
