@@ -20,6 +20,7 @@ public final class ConfigHelper {
         SweetConcreteConfig.enableCake = ConfigHolder.COMMON.enableCake.get();
         SweetConcreteConfig.enableSigns = ConfigHolder.COMMON.enableSigns.get();
         SweetConcreteConfig.enableLevers = ConfigHolder.COMMON.enableLevers.get();
+        SweetConcreteConfig.enableVerticalSlabs = ConfigHolder.COMMON.enableVerticalSlabs.get();
     }
 
     public static void setValueAndSave(final ModConfig modConfig, final String path, final Object newValue) {

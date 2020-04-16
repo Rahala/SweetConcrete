@@ -1,0 +1,8 @@
+{
+    "parent": "sweetconcrete:block/vertical_slab",
+    "textures": {
+        "side": "block/black_concrete",
+        "top": "block/black_concrete",
+        "bottom": "block/black_concrete"
+    }
+}
