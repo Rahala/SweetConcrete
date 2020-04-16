@@ -54,6 +54,9 @@ public class FlagRecipeCondition implements ICondition {
         if (flag.equals("levers")) {
             return SweetConcreteConfig.enableLevers;
         }
+        if (flag.equals("vertical_slabs")) {
+            return SweetConcreteConfig.enableVerticalSlabs;
+        }
         return true;
     }
 

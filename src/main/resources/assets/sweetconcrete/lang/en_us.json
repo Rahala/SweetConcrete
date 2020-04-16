@@ -169,5 +169,22 @@
   "block.sweetconcrete.lime_concrete_lever": "Lime Concrete Lever",
   "block.sweetconcrete.cyan_concrete_lever": "Cyan Concrete Lever",
   "block.sweetconcrete.purple_concrete_lever": "Purple Concrete Lever",
-  "block.sweetconcrete.gray_concrete_lever": "Gray Concrete Lever"
+  "block.sweetconcrete.gray_concrete_lever": "Gray Concrete Lever",
+
+  "block.sweetconcrete.red_concrete_vertical_slab": "Red Concrete Vertical Slab",
+  "block.sweetconcrete.yellow_concrete_vertical_slab": "Yellow Concrete Vertical Slab",
+  "block.sweetconcrete.green_concrete_vertical_slab": "Green Concrete Vertical Slab",
+  "block.sweetconcrete.black_concrete_vertical_slab": "Black Concrete Vertical Slab",
+  "block.sweetconcrete.brown_concrete_vertical_slab": "Brown Concrete Vertical Slab",
+  "block.sweetconcrete.blue_concrete_vertical_slab": "Blue Concrete Vertical Slab",
+  "block.sweetconcrete.white_concrete_vertical_slab": "White Concrete Vertical Slab",
+  "block.sweetconcrete.orange_concrete_vertical_slab": "Orange Concrete Vertical Slab",
+  "block.sweetconcrete.light_blue_concrete_vertical_slab": "Light Blue Concrete Vertical Slab",
+  "block.sweetconcrete.magenta_concrete_vertical_slab": "Magenta Concrete Vertical Slab",
+  "block.sweetconcrete.pink_concrete_vertical_slab": "Pink Concrete Vertical Slab",
+  "block.sweetconcrete.light_gray_concrete_vertical_slab": "Light Gray Concrete Vertical Slab",
+  "block.sweetconcrete.lime_concrete_vertical_slab": "Lime Concrete Vertical Slab",
+  "block.sweetconcrete.cyan_concrete_vertical_slab": "Cyan Concrete Vertical Slab",
+  "block.sweetconcrete.purple_concrete_vertical_slab": "Purple Concrete Vertical Slab",
+  "block.sweetconcrete.gray_concrete_vertical_slab": "Gray Concrete Vertical Slab"
 }

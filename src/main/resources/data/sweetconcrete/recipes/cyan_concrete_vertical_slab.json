@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "concrete_vertical_slabs",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "cyan_concrete"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:cyan_concrete_vertical_slab",
+    "count": 6
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "vertical_slabs"
+    }
+  ]
+} 
