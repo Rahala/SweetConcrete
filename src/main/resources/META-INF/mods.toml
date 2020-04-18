@@ -4,7 +4,7 @@ issueTrackerURL="https://github.com/Rahala/SweetConcrete/issues" #optional
 
 [[mods]]
 modId="sweetconcrete"
-version="1.15.2-1.5.0"
+version="1.15.2-1.6.0"
 displayName="Sweet Concrete"
 authors="Rahala" #optional
 description='''

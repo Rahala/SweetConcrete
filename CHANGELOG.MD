@@ -1,3 +1,8 @@
+### v1.6.0 Current Version
+
+#### New features
+* Vertical slabs
+
 ### v1.5.0 Current Version
 
 #### New features
