@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:{{ name }}_powder"
+    }
+  },
+  "result": {
+    "item": "{{ modid }}:{{ name }}_powder_layer",
+    "count": 6
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "powder_layers"
+    }
+  ]
+}

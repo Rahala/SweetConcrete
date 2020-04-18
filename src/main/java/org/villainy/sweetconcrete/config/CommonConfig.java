@@ -16,6 +16,7 @@ final class CommonConfig {
     final ForgeConfigSpec.BooleanValue enableSigns;
     final ForgeConfigSpec.BooleanValue enableLevers;
     final ForgeConfigSpec.BooleanValue enableVerticalSlabs;
+    final ForgeConfigSpec.BooleanValue enablePowderLayers;
 
     CommonConfig(final ForgeConfigSpec.Builder builder) {
         builder.push("general");
@@ -60,9 +61,13 @@ final class CommonConfig {
                 .translation(SweetConcrete.MODID + ".config.enableLevers")
                 .define("enableLevers", true);
         enableVerticalSlabs = builder
-                .comment("Enable vertical slabs")
+                .comment("Enable concrte vertical slabs")
                 .translation(SweetConcrete.MODID + ".config.enableVerticalSlabs")
                 .define("enableVerticalSlabs", true);
+        enablePowderLayers = builder
+                .comment("Enable concrete powder layers")
+                .translation(SweetConcrete.MODID + ".config.enablePowderLayers")
+                .define("enablePowderLayers", true);
         builder.pop();
     }
 
