@@ -206,6 +206,20 @@ verticalSlabAssets = {
     'vertical_slab/loot_table_vertical_slab.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_vertical_slab.json'
 }
 
+powderLayerAssets = {
+    'powder_layer/blockstate_powder_layer.j2' : 'assets/sweetconcrete/blockstates/%s_concrete_powder_layer.json',
+    'powder_layer/model_block_powder_layer2.j2' : 'assets/sweetconcrete/models/block/%s_concrete_powder_layer2.json',
+    'powder_layer/model_block_powder_layer4.j2' : 'assets/sweetconcrete/models/block/%s_concrete_powder_layer4.json',
+    'powder_layer/model_block_powder_layer6.j2' : 'assets/sweetconcrete/models/block/%s_concrete_powder_layer6.json',
+    'powder_layer/model_block_powder_layer8.j2' : 'assets/sweetconcrete/models/block/%s_concrete_powder_layer8.json',
+    'powder_layer/model_block_powder_layer10.j2' : 'assets/sweetconcrete/models/block/%s_concrete_powder_layer10.json',
+    'powder_layer/model_block_powder_layer12.j2' : 'assets/sweetconcrete/models/block/%s_concrete_powder_layer12.json',
+    'powder_layer/model_block_powder_layer14.j2' : 'assets/sweetconcrete/models/block/%s_concrete_powder_layer14.json',
+    'powder_layer/model_item_powder_layer.j2' : 'assets/sweetconcrete/models/item/%s_concrete_powder_layer.json',
+    'powder_layer/recipe_powder_layer.j2': 'data/sweetconcrete/recipes/%s_concrete_powder_layer.json',
+    'powder_layer/loot_table_powder_layer.j2' : 'data/sweetconcrete/loot_tables/blocks/%s_concrete_powder_layer.json',
+}
+
 blockTypes = {
     'slab' : slabAssets,
     'stairs': stairsAssets,
@@ -218,6 +232,7 @@ blockTypes = {
     'ladder': ladderAssets,
     'sign': signAssets,
     'vertical_slab': verticalSlabAssets,
+    'powder_layer': powderLayerAssets,
 }
 
 uncoloredBlockTypes = {

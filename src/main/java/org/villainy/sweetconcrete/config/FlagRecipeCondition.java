@@ -57,6 +57,9 @@ public class FlagRecipeCondition implements ICondition {
         if (flag.equals("vertical_slabs")) {
             return SweetConcreteConfig.enableVerticalSlabs;
         }
+        if (flag.equals("powder_layers")) {
+            return SweetConcreteConfig.enablePowderLayers;
+        }
         return true;
     }
 

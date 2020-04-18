@@ -21,6 +21,7 @@ public final class ConfigHelper {
         SweetConcreteConfig.enableSigns = ConfigHolder.COMMON.enableSigns.get();
         SweetConcreteConfig.enableLevers = ConfigHolder.COMMON.enableLevers.get();
         SweetConcreteConfig.enableVerticalSlabs = ConfigHolder.COMMON.enableVerticalSlabs.get();
+        SweetConcreteConfig.enablePowderLayers = ConfigHolder.COMMON.enablePowderLayers.get();
     }
 
     public static void setValueAndSave(final ModConfig modConfig, final String path, final Object newValue) {

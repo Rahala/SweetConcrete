@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:blue_concrete_powder"
+    }
+  },
+  "result": {
+    "item": "sweetconcrete:blue_concrete_powder_layer",
+    "count": 6
+  }
+}

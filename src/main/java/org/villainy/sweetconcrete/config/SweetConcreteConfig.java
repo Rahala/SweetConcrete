@@ -13,5 +13,6 @@ public final class SweetConcreteConfig {
     public static boolean enableSigns;
     public static boolean enableLevers;
     public static boolean enableVerticalSlabs;
+    public static boolean enablePowderLayers;
 
 }
