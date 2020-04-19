@@ -1,4 +1,9 @@
-### v1.5.0 Current Version
+### v1.6.0 Current Version
+
+#### New features
+* Concrete vertical slabs
+
+### v1.5.0
 
 #### New features
 * Concrete levers
