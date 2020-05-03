@@ -1,4 +1,9 @@
-### v1.6.0 Current Version
+### v1.7.0 Current Version
+
+#### New features
+* Concrete powder layers
+
+### v1.6.0
 
 #### New features
 * Concrete vertical slabs

@@ -76,7 +76,7 @@ public class ConcretePowderLayerBlock extends Block {
         BlockState blockstate = worldIn.getBlockState(pos.down());
         Block block = blockstate.getBlock();
 
-        if (block != Blocks.HONEY_BLOCK && block != Blocks.SOUL_SAND) {
+        if (block != Blocks.SOUL_SAND) {
             return Block.doesSideFillSquare(blockstate.getCollisionShape(worldIn, pos.down()), Direction.UP) || block == this && blockstate.get(LAYERS) == 8;
         } else {
             return true;
