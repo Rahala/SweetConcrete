@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:magenta_concrete"
+  },
+  "result": "sweetconcrete:magenta_concrete_stairs",
+  "count": 1,
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "stairs"
+    }
+  ]
+}

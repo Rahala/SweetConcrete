@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:pink_concrete"
+  },
+  "result": "sweetconcrete:pink_concrete_wall",
+  "count": 1,
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "walls"
+    }
+  ]
+}

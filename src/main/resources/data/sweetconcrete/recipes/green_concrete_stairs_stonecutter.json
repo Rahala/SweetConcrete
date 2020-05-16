@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:green_concrete"
+  },
+  "result": "sweetconcrete:green_concrete_stairs",
+  "count": 1,
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "stairs"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:green_concrete"
+  },
+  "result": "sweetconcrete:green_concrete_vertical_slab",
+  "count": 2,
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "vertical_slabs"
+    }
+  ]
+}
