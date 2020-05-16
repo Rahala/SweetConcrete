@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:yellow_concrete"
+  },
+  "result": "sweetconcrete:yellow_concrete_slab",
+  "count": 2,
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "slabs"
+    }
+  ]
+}

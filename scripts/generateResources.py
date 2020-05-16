@@ -102,6 +102,7 @@ slabAssets = {
     'slab/model_block_slab.j2': 'assets/sweetconcrete/models/block/%s_concrete_slab.json',
     'slab/model_item_slab.j2': 'assets/sweetconcrete/models/item/%s_concrete_slab.json',
     'slab/recipe_slab.j2': 'data/sweetconcrete/recipes/%s_concrete_slab.json',
+    'slab/recipe_slab_stonecutter.j2': 'data/sweetconcrete/recipes/%s_concrete_slab_stonecutter.json',
     'slab/loot_table_slab.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_slab.json'
 }
 
@@ -112,6 +113,7 @@ stairsAssets = {
     'stairs/model_block_stairs_outer.j2': 'assets/sweetconcrete/models/block/%s_concrete_stairs_outer.json',
     'stairs/model_item_stairs.j2': 'assets/sweetconcrete/models/item/%s_concrete_stairs.json',
     'stairs/recipe_stairs.j2': 'data/sweetconcrete/recipes/%s_concrete_stairs.json',
+    'stairs/recipe_stairs_stonecutter.j2': 'data/sweetconcrete/recipes/%s_concrete_stairs_stonecutter.json',
     'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_stairs.json'
 }
 
@@ -122,6 +124,7 @@ wallAssets = {
     'wall/model_block_wall_side.j2': 'assets/sweetconcrete/models/block/%s_concrete_wall_side.json',
     'wall/model_item_wall.j2': 'assets/sweetconcrete/models/item/%s_concrete_wall.json',
     'wall/recipe_wall.j2': 'data/sweetconcrete/recipes/%s_concrete_wall.json',
+    'wall/recipe_wall_stonecutter.j2': 'data/sweetconcrete/recipes/%s_concrete_wall_stonecutter.json',
     'loot_table_generic.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_wall.json'
 }
 
@@ -203,6 +206,7 @@ verticalSlabAssets = {
     'vertical_slab/model_block_vertical_slab.j2': 'assets/sweetconcrete/models/block/%s_concrete_vertical_slab.json',
     'vertical_slab/model_item_vertical_slab.j2': 'assets/sweetconcrete/models/item/%s_concrete_vertical_slab.json',
     'vertical_slab/recipe_vertical_slab.j2': 'data/sweetconcrete/recipes/%s_concrete_vertical_slab.json',
+    'vertical_slab/recipe_vertical_slab_stonecutter.j2': 'data/sweetconcrete/recipes/%s_concrete_vertical_slab_stonecutter.json',
     'vertical_slab/loot_table_vertical_slab.j2': 'data/sweetconcrete/loot_tables/blocks/%s_concrete_vertical_slab.json'
 }
 

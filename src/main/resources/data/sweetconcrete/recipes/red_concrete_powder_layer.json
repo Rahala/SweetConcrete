@@ -11,5 +11,11 @@
   "result": {
     "item": "sweetconcrete:red_concrete_powder_layer",
     "count": 6
-  }
+  },
+  "conditions": [
+    {
+      "type": "sweetconcrete:flag",
+      "flag": "powder_layers"
+    }
+  ]
 }

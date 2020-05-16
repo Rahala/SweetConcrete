@@ -1,4 +1,10 @@
-### v1.7.0 Current Version
+### v1.7.1 Current Version
+
+#### Enhancements
+* Added stonecutter support
+* Fixed some config option for concrete powder layers
+
+### v1.7.0
 
 #### New features
 * Concrete powder layers
