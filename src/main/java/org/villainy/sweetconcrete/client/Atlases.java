@@ -1,6 +1,6 @@
 package org.villainy.sweetconcrete.client;
 
-import net.minecraft.client.renderer.model.Material;
+import net.minecraft.client.renderer.model.RenderMaterial;
 import net.minecraft.item.DyeColor;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class Atlases {
-    private static final Map<DyeColor, Material> CONCRETE_MATERIALS;
+    private static final Map<DyeColor, RenderMaterial> CONCRETE_MATERIALS;
 
     static {
         CONCRETE_MATERIALS = makeConcreteMaterials();
@@ -22,16 +22,16 @@ public final class Atlases {
     private Atlases() {
     }
 
-    private static Map<DyeColor, Material> makeConcreteMaterials() {
-        final EnumMap<DyeColor, Material> materials = new EnumMap<>(DyeColor.class);
+    private static Map<DyeColor, RenderMaterial> makeConcreteMaterials() {
+        final EnumMap<DyeColor, RenderMaterial> materials = new EnumMap<>(DyeColor.class);
         for (final DyeColor dyeColor : DyeColor.values()) {
-            materials.put(dyeColor, new Material(net.minecraft.client.renderer.Atlases.SIGN_ATLAS,
+            materials.put(dyeColor, new RenderMaterial(net.minecraft.client.renderer.Atlases.SIGN_ATLAS,
                     new ResourceLocation("block/" + dyeColor.getTranslationKey() + "_concrete")));
         }
         return materials;
     }
 
-    public static Material getConcreteMaterial(final DyeColor dyeColor) {
+    public static RenderMaterial getConcreteMaterial(final DyeColor dyeColor) {
         return CONCRETE_MATERIALS.get(dyeColor);
     }
 

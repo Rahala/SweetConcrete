@@ -18,7 +18,7 @@ public class ConcreteVerticalSlabBlock extends VerticalSlabBlock {
 
     public ConcreteVerticalSlabBlock(DyeColor dyeColor) {
         super(Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(1.8F));
-        setRegistryName(dyeColor.getName() + "_concrete_vertical_slab");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_vertical_slab");
     }
 
     @Override

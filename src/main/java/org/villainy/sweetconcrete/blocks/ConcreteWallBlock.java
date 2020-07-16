@@ -20,7 +20,7 @@ public class ConcreteWallBlock extends WallBlock {
 
     public ConcreteWallBlock(DyeColor dyeColor) {
         super(Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(1.8F));
-        setRegistryName(dyeColor.getName() + "_concrete_wall");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_wall");
     }
 
     @Override

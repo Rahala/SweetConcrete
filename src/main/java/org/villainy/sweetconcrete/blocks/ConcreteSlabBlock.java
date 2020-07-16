@@ -19,7 +19,7 @@ public class ConcreteSlabBlock extends SlabBlock {
 
     public ConcreteSlabBlock(DyeColor dyeColor) {
         super(Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(1.8F));
-        setRegistryName(dyeColor.getName() + "_concrete_slab");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_slab");
     }
 
     @Override

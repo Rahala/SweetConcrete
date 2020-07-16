@@ -44,7 +44,7 @@ public class ConcretePowderLayerBlock extends Block {
     public ConcretePowderLayerBlock(DyeColor dyeColor) {
         super(Block.Properties.create(Material.SAND, dyeColor).hardnessAndResistance(0.5F).sound(SoundType.SAND));
         this.setDefaultState(this.stateContainer.getBaseState().with(LAYERS, Integer.valueOf(1)));
-        setRegistryName(dyeColor.getName() + "_concrete_powder_layer");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_powder_layer");
     }
 
     public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {

@@ -21,7 +21,7 @@ public class ConcreteStairsBlock extends StairsBlock {
 
     public ConcreteStairsBlock(DyeColor dyeColor, BlockState blockState) {
         super(blockState, Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(1.8F));
-        setRegistryName(dyeColor.getName() + "_concrete_stairs");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_stairs");
     }
 
     @Override

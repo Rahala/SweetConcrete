@@ -36,7 +36,7 @@ public class ConcreteLadderBlock extends LadderBlock {
 
     public ConcreteLadderBlock(DyeColor dyeColor) {
         super(Block.Properties.create(Material.ROCK, dyeColor).notSolid().hardnessAndResistance(0.4F).sound(SoundType.LADDER));
-        setRegistryName(dyeColor.getName() + "_concrete_ladder");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_ladder");
     }
 
     @Override

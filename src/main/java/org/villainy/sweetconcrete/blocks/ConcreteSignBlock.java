@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.fluid.IFluidState;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemGroup;
@@ -48,7 +48,7 @@ public class ConcreteSignBlock extends AbstractSignBlock {
                 .hardnessAndResistance(1.0F)
                 .sound(SoundType.STONE), WoodType.OAK);
         this.dyeColor = dyeColor;
-        setRegistryName(dyeColor.getName() + "_concrete_sign");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_sign");
     }
 
     @Override
@@ -149,7 +149,7 @@ public class ConcreteSignBlock extends AbstractSignBlock {
     @Nullable
     public BlockState getStateForPlacement(BlockItemUseContext context) {
         BlockState state = this.getDefaultState();
-        IFluidState fluid = context.getWorld().getFluidState(context.getPos());
+        FluidState fluid = context.getWorld().getFluidState(context.getPos());
         IWorldReader world = context.getWorld();
         BlockPos pos = context.getPos();
 

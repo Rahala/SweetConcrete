@@ -23,7 +23,7 @@ public class ConcretePressurePlateBlock extends PressurePlateBlock {
                 Block.Properties.create(Material.ROCK, dyeColor)
                         .doesNotBlockMovement()
                         .hardnessAndResistance(0.5F));
-        setRegistryName(dyeColor.getName() + "_concrete_pressure_plate");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_pressure_plate");
     }
 
     @Override

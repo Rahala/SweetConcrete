@@ -23,7 +23,7 @@ public class ConcreteFenceGateBlock extends FenceGateBlock {
         super(Block.Properties.create(Material.ROCK, dyeColor)
                 .hardnessAndResistance(2.0F, 6.0F)
                 .sound(SoundType.STONE));
-        setRegistryName(dyeColor.getName() + "_concrete_fence_gate");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_fence_gate");
     }
 
     @Override

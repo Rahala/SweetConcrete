@@ -19,7 +19,7 @@ public class ConcreteLeverBlock extends LeverBlock {
 
     public ConcreteLeverBlock(DyeColor dyeColor) {
         super(Block.Properties.create(Material.ROCK, dyeColor));
-        setRegistryName(dyeColor.getName() + "_concrete_lever");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_lever");
     }
 
     @Override

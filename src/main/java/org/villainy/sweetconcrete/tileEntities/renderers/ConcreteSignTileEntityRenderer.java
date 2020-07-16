@@ -5,18 +5,18 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.RenderComponentsUtil;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Vector3f;
-import net.minecraft.client.renderer.model.Material;
+import net.minecraft.client.renderer.model.RenderMaterial;
 import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.state.properties.AttachFace;
 import net.minecraft.util.Direction;
-import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.vector.Vector3f;
+import net.minecraft.util.text.ITextProperties;
+import net.minecraft.util.text.Style;
 import org.villainy.sweetconcrete.blocks.ConcreteSignBlock;
 import org.villainy.sweetconcrete.client.Atlases;
 import org.villainy.sweetconcrete.tileEntities.ConcreteSignTileEntity;
@@ -32,7 +32,7 @@ public class ConcreteSignTileEntityRenderer extends TileEntityRenderer<ConcreteS
         super(dispatcher);
     }
 
-    private Material getSignMaterial(Block block) {
+    private RenderMaterial getSignMaterial(Block block) {
         ConcreteSignBlock signBlock = (ConcreteSignBlock) block;
         return Atlases.getConcreteMaterial(signBlock.dyeColor);
     }
@@ -82,7 +82,7 @@ public class ConcreteSignTileEntityRenderer extends TileEntityRenderer<ConcreteS
         matrixStackIn.push();
         matrixStackIn.scale(scale, -scale, -scale);
         {
-            Material material = SignTileEntityRenderer.getMaterial(state.getBlock());
+            RenderMaterial material = SignTileEntityRenderer.getMaterial(state.getBlock());
             IVertexBuilder ivertexbuilder = material.getBuffer(bufferIn, RenderType::getEntityCutout);
             this.model.signBoard.render(matrixStackIn, ivertexbuilder, combinedLightIn, combinedOverlayIn);
             this.model.signStick.render(matrixStackIn, ivertexbuilder, combinedLightIn, combinedOverlayIn);
@@ -105,18 +105,16 @@ public class ConcreteSignTileEntityRenderer extends TileEntityRenderer<ConcreteS
 
         for (int j1 = 0; j1 < 4; ++j1)
         {
-            String s = tileEntity.getRenderText(j1, (p_212491_1_) -> {
-                List<ITextComponent> list = RenderComponentsUtil.splitText(p_212491_1_, 90, fontrenderer, false, true);
-                return list.isEmpty() ? "" : list.get(0).getFormattedText();
+            ITextProperties itextproperties = tileEntity.func_235677_a_(j1, (p_212491_1_) -> {
+                List<ITextProperties> list = fontrenderer.func_238420_b_().func_238362_b_(p_212491_1_, 90, Style.EMPTY);
+                return list.isEmpty() ? ITextProperties.field_240651_c_ : list.get(0);
             });
-            if (s != null)
-            {
-                float f3 = (float) (-fontrenderer.getStringWidth(s) / 2);
-                fontrenderer.renderString(s, f3, (float) (j1 * 10 - tileEntity.signText.length * 5), adjustedColor, false, matrixStackIn.getLast().getMatrix(), bufferIn, false, 0, combinedLightIn);
+            if (itextproperties != null) {
+                float f3 = (float)(-fontrenderer.func_238414_a_(itextproperties) / 2);
+                fontrenderer.func_238416_a_(itextproperties, f3, (float)(j1 * 10 - 20), adjustedColor, false, matrixStackIn.getLast().getMatrix(), bufferIn, false, 0, combinedLightIn);
             }
         }
 
         matrixStackIn.pop();
-
     }
 }

@@ -20,7 +20,7 @@ public class ConcreteFenceBlock extends FenceBlock {
 
     public ConcreteFenceBlock(DyeColor dyeColor) {
         super(Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(2.0F, 6.0F));
-        setRegistryName(dyeColor.getName() + "_concrete_fence");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_fence");
     }
 
     @Override

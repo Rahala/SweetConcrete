@@ -122,6 +122,7 @@ wallAssets = {
     'wall/model_block_wall_inventory.j2': 'assets/sweetconcrete/models/block/%s_concrete_wall_inventory.json',
     'wall/model_block_wall_post.j2': 'assets/sweetconcrete/models/block/%s_concrete_wall_post.json',
     'wall/model_block_wall_side.j2': 'assets/sweetconcrete/models/block/%s_concrete_wall_side.json',
+    'wall/model_block_wall_side_tall.j2': 'assets/sweetconcrete/models/block/%s_concrete_wall_side_tall.json',
     'wall/model_item_wall.j2': 'assets/sweetconcrete/models/item/%s_concrete_wall.json',
     'wall/recipe_wall.j2': 'data/sweetconcrete/recipes/%s_concrete_wall.json',
     'wall/recipe_wall_stonecutter.j2': 'data/sweetconcrete/recipes/%s_concrete_wall_stonecutter.json',

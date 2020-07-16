@@ -20,7 +20,7 @@ public class ConcreteButtonBlock extends StoneButtonBlock {
 
     public ConcreteButtonBlock(DyeColor dyeColor) {
         super(Block.Properties.create(Material.ROCK, dyeColor));
-        setRegistryName(dyeColor.getName() + "_concrete_button");
+        setRegistryName(dyeColor.getTranslationKey() + "_concrete_button");
     }
 
     @Override
