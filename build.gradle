@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.5-1.7.1'
+version = '1.16.5-1.7.2'
 group = 'org.villainy.sweetconcrete' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'sweetconcrete'
 
@@ -117,7 +117,7 @@ jar {
         attributes([
             "Specification-Title": "sweetconcrete",
             "Specification-Vendor": "rahala",
-            "Specification-Version": "1.16.5-1.7.1",
+            "Specification-Version": "1.16.5-1.7.2",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"rahala",

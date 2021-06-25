@@ -1,4 +1,9 @@
-### v1.7.1 Current Version
+### v1.7.2 Current Version
+
+#### Bug fixes
+* Fixed ladders not being climbable in newer Forge versions
+
+### v1.7.1
 
 #### Enhancements
 * Added stonecutter support
