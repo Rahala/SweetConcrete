@@ -1,33 +1,33 @@
 package org.villainy.sweetconcrete.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
+import net.minecraft.core.NonNullList;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
 import org.villainy.sweetconcrete.config.SweetConcreteConfig;
 import org.villainy.sweetconcrete.objectholders.ConcreteStairsBlocks;
 
 import java.util.stream.Stream;
 
-public class ConcreteStairsBlock extends StairsBlock {
+public class ConcreteStairsBlock extends StairBlock {
 
     private boolean isEnabled() {
         return SweetConcreteConfig.enableStairs;
     }
 
     public ConcreteStairsBlock(DyeColor dyeColor, BlockState blockState) {
-        super(blockState, Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(1.8F));
-        setRegistryName(dyeColor.getTranslationKey() + "_concrete_stairs");
+        super(blockState, Block.Properties.of(Material.STONE, dyeColor).explosionResistance(1.8F));
+        setRegistryName(dyeColor.getSerializedName() + "_concrete_stairs");
     }
 
     @Override
-    public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-        if (group == ItemGroup.SEARCH || isEnabled())
-            super.fillItemGroup(group, items);
+    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
+        if (group == CreativeModeTab.TAB_SEARCH || isEnabled())
+            super.fillItemCategory(group, items);
     }
 
     public static Stream<Block> allBlocks() {

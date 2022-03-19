@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "sweetconcrete:item/red_concrete_sign"
-  }
-}

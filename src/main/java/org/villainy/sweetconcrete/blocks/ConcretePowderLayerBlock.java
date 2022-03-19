@@ -1,27 +1,27 @@
 package org.villainy.sweetconcrete.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.pathfinding.PathType;
-import net.minecraft.state.IntegerProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.Direction;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.villainy.sweetconcrete.config.SweetConcreteConfig;
 import org.villainy.sweetconcrete.objectholders.ConcretePowderLayerBlocks;
 
@@ -29,28 +29,28 @@ import javax.annotation.Nullable;
 import java.util.stream.Stream;
 
 public class ConcretePowderLayerBlock extends Block {
-    public static final IntegerProperty LAYERS = BlockStateProperties.LAYERS_1_8;
+    public static final IntegerProperty LAYERS = BlockStateProperties.LAYERS;
     protected static final VoxelShape[] SHAPES = new VoxelShape[]{
-            VoxelShapes.empty(),
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
+            Shapes.empty(),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
 
     public ConcretePowderLayerBlock(DyeColor dyeColor) {
-        super(Block.Properties.create(Material.SAND, dyeColor).hardnessAndResistance(0.5F).sound(SoundType.SAND));
-        this.setDefaultState(this.stateContainer.getBaseState().with(LAYERS, Integer.valueOf(1)));
-        setRegistryName(dyeColor.getTranslationKey() + "_concrete_powder_layer");
+        super(Block.Properties.of(Material.SAND, dyeColor).explosionResistance(0.5F).sound(SoundType.SAND));
+        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(LAYERS, Integer.valueOf(1)));
+        setRegistryName(dyeColor.getSerializedName() + "_concrete_powder_layer");
     }
 
-    public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
+    public boolean isPathfindable(BlockState state, BlockGetter blockGetter, BlockPos pos, PathComputationType type) {
         switch (type) {
             case LAND:
-                return state.get(LAYERS) < 5;
+                return state.getValue(LAYERS) < 5;
             case WATER:
                 return false;
             case AIR:
@@ -60,44 +60,38 @@ public class ConcretePowderLayerBlock extends Block {
         }
     }
 
-    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-        return SHAPES[state.get(LAYERS)];
+    public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
+        return SHAPES[state.getValue(LAYERS)];
     }
 
-    public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-        return SHAPES[state.get(LAYERS) - 1];
+    public VoxelShape getCollisionShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+        return SHAPES[state.getValue(LAYERS) - 1];
     }
 
-    public boolean isTransparent(BlockState state) {
+    public boolean useShapeForLightOcclusion(BlockState state) {
         return true;
     }
 
-    public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-        BlockState blockstate = worldIn.getBlockState(pos.down());
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockState blockstate = level.getBlockState(pos.below());
         Block block = blockstate.getBlock();
 
         if (block != Blocks.HONEY_BLOCK && block != Blocks.SOUL_SAND) {
-            return Block.doesSideFillSquare(blockstate.getCollisionShape(worldIn, pos.down()), Direction.UP) || block == this && blockstate.get(LAYERS) == 8;
+            return Block.isFaceFull(blockstate.getCollisionShape(level, pos.below()), Direction.UP) || block == this && blockstate.getValue(LAYERS) == 8;
         } else {
             return true;
         }
     }
 
-    /**
-     * Update the provided state given the provided neighbor facing and neighbor state, returning a new state.
-     * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
-     * returns its solidified counterpart.
-     * Note that this method should ideally consider only the specific face passed in.
-     */
-    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-        return !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor levelAccessor, BlockPos currentPos, BlockPos facingPos) {
+        return !stateIn.canSurvive(levelAccessor, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, levelAccessor, currentPos, facingPos);
     }
 
-    public boolean isReplaceable(BlockState state, BlockItemUseContext useContext) {
-        int i = state.get(LAYERS);
-        if (useContext.getItem().getItem() == this.asItem() && i < 8) {
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
+        int i = state.getValue(LAYERS);
+        if (useContext.getItemInHand().getItem() == this.asItem() && i < 8) {
             if (useContext.replacingClickedOnBlock()) {
-                return useContext.getFace() == Direction.UP;
+                return useContext.getClickedFace() == Direction.UP;
             } else {
                 return true;
             }
@@ -107,24 +101,24 @@ public class ConcretePowderLayerBlock extends Block {
     }
 
     @Nullable
-    public BlockState getStateForPlacement(BlockItemUseContext context) {
-        BlockState blockstate = context.getWorld().getBlockState(context.getPos());
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos());
         if (blockstate.getBlock() == this) {
-            int i = blockstate.get(LAYERS);
-            return blockstate.with(LAYERS, Integer.valueOf(Math.min(8, i + 1)));
+            int i = blockstate.getValue(LAYERS);
+            return blockstate.setValue(LAYERS, Integer.valueOf(Math.min(8, i + 1)));
         } else {
             return super.getStateForPlacement(context);
         }
     }
 
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(LAYERS);
     }
 
     @Override
-    public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-        if (group == ItemGroup.SEARCH || isEnabled())
-            super.fillItemGroup(group, items);
+    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
+        if (group == CreativeModeTab.TAB_SEARCH || isEnabled())
+            super.fillItemCategory(group, items);
     }
 
     static public Stream<Block> allBlocks() {

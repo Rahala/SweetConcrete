@@ -1,11 +1,10 @@
 package org.villainy.sweetconcrete;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.RegistryEvent;
@@ -14,11 +13,10 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.network.NetworkRegistry;
-import net.minecraftforge.fml.network.simple.SimpleChannel;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,14 +24,10 @@ import org.villainy.sweetconcrete.blocks.*;
 import org.villainy.sweetconcrete.config.ConfigHelper;
 import org.villainy.sweetconcrete.config.ConfigHolder;
 import org.villainy.sweetconcrete.config.FlagRecipeCondition;
-import org.villainy.sweetconcrete.items.ConcreteSignItem;
 import org.villainy.sweetconcrete.items.helper.BlockItemHelper;
-import org.villainy.sweetconcrete.network.OpenConcreteSignEditor;
-import org.villainy.sweetconcrete.objectholders.ConcreteSignBlocks;
 import org.villainy.sweetconcrete.proxy.ClientProxy;
 import org.villainy.sweetconcrete.proxy.IProxy;
 import org.villainy.sweetconcrete.proxy.CommonProxy;
-import org.villainy.sweetconcrete.tileEntities.ConcreteSignTileEntity;
 
 import java.util.stream.Stream;
 
@@ -44,12 +38,6 @@ public class SweetConcrete
 
     public static final String CHANNEL = MODID;
     private static final String PROTOCOL_VERSION = "1.0";
-    public static SimpleChannel channel = NetworkRegistry.ChannelBuilder
-            .named(new ResourceLocation(MODID, CHANNEL))
-            .clientAcceptedVersions(PROTOCOL_VERSION::equals)
-            .serverAcceptedVersions(PROTOCOL_VERSION::equals)
-            .networkProtocolVersion(() -> PROTOCOL_VERSION)
-            .simpleChannel();
 
     public static IProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
 
@@ -73,8 +61,6 @@ public class SweetConcrete
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        int messageNumber = 0;
-        channel.registerMessage(messageNumber++, OpenConcreteSignEditor.class, OpenConcreteSignEditor::encode, OpenConcreteSignEditor::new, OpenConcreteSignEditor::handle);
     }
 
     private void loadComplete(final FMLLoadCompleteEvent event)
@@ -92,14 +78,13 @@ public class SweetConcrete
                 ConcreteSlabBlock slab = new ConcreteSlabBlock(dyeColor);
 
                 blockRegistry.register(slab);
-                blockRegistry.register(new ConcreteStairsBlock(dyeColor, slab.getDefaultState()));
+                blockRegistry.register(new ConcreteStairsBlock(dyeColor, slab.defaultBlockState()));
                 blockRegistry.register(new ConcreteWallBlock(dyeColor));
                 blockRegistry.register(new ConcreteButtonBlock(dyeColor));
                 blockRegistry.register(new ConcretePressurePlateBlock(dyeColor));
                 blockRegistry.register(new ConcreteFenceBlock(dyeColor));
                 blockRegistry.register(new ConcreteFenceGateBlock(dyeColor));
                 blockRegistry.register(new ConcreteLadderBlock(dyeColor));
-                blockRegistry.register(new ConcreteSignBlock(dyeColor));
                 blockRegistry.register(new ConcreteLeverBlock(dyeColor));
                 blockRegistry.register(new ConcreteVerticalSlabBlock(dyeColor));
                 blockRegistry.register(new ConcretePowderLayerBlock(dyeColor));
@@ -113,72 +98,45 @@ public class SweetConcrete
             final IForgeRegistry<Item> itemRegistry = event.getRegistry();
 
             ConcreteSlabBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.BUILDING_BLOCKS))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_BUILDING_BLOCKS))
             );
             ConcreteStairsBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.BUILDING_BLOCKS))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_BUILDING_BLOCKS))
             );
             ConcreteWallBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_DECORATIONS))
             );
             ConcreteButtonBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.REDSTONE))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_REDSTONE))
             );
             ConcretePressurePlateBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.REDSTONE))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_REDSTONE))
             );
             ConcreteFenceBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_DECORATIONS))
             );
             ConcreteFenceGateBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_DECORATIONS))
             );
             ConcreteLadderBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.DECORATIONS))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_DECORATIONS))
             );
-            ConcreteSignBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(new ConcreteSignItem(block))
-			);
             ConcreteCakeBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.FOOD))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_FOOD))
             );
             ConcreteLeverBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.REDSTONE))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_REDSTONE))
             );
             ConcreteVerticalSlabBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.BUILDING_BLOCKS))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_BUILDING_BLOCKS))
             );
             ConcretePowderLayerBlock.allBlocks().forEach (block ->
-                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, ItemGroup.BUILDING_BLOCKS))
+                    itemRegistry.register(BlockItemHelper.createBasicBlockItem(block, CreativeModeTab.TAB_BUILDING_BLOCKS))
             );
         }
 
         @SubscribeEvent
-        public static void onTileEntityRegistry(final RegistryEvent.Register<TileEntityType<?>> event) {
-            TileEntityType<?> concreteSignType = TileEntityType.Builder.create(ConcreteSignTileEntity::new,
-                    ConcreteSignBlocks.WHITE,
-                    ConcreteSignBlocks.ORANGE,
-                    ConcreteSignBlocks.MAGENTA,
-                    ConcreteSignBlocks.LIGHT_BLUE,
-                    ConcreteSignBlocks.YELLOW,
-                    ConcreteSignBlocks.LIME,
-                    ConcreteSignBlocks.PINK,
-                    ConcreteSignBlocks.GRAY,
-                    ConcreteSignBlocks.LIGHT_GRAY,
-                    ConcreteSignBlocks.CYAN,
-                    ConcreteSignBlocks.PURPLE,
-                    ConcreteSignBlocks.BLUE,
-                    ConcreteSignBlocks.BROWN,
-                    ConcreteSignBlocks.GREEN,
-                    ConcreteSignBlocks.RED,
-                    ConcreteSignBlocks.BLACK
-            ).build(null);
-            concreteSignType.setRegistryName(MODID, "concrete_sign");
-            event.getRegistry().register(concreteSignType);
-        }
-
-        @SubscribeEvent
-        public static void onModConfigEvent(final ModConfig.ModConfigEvent event) {
+        public static void onModConfigEvent(final ModConfigEvent.Loading event) {
             final ModConfig config = event.getConfig();
             if (config.getSpec() == ConfigHolder.COMMON_SPEC) {
                 ConfigHelper.bakeCommon(config);

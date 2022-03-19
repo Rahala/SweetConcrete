@@ -1,11 +1,12 @@
 package org.villainy.sweetconcrete.blocks;
 
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
+import net.minecraft.core.NonNullList;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.material.Material;
 import org.villainy.sweetconcrete.config.SweetConcreteConfig;
 import org.villainy.sweetconcrete.objectholders.ConcreteSlabBlocks;
 
@@ -18,14 +19,14 @@ public class ConcreteSlabBlock extends SlabBlock {
     }
 
     public ConcreteSlabBlock(DyeColor dyeColor) {
-        super(Block.Properties.create(Material.ROCK, dyeColor).hardnessAndResistance(1.8F));
-        setRegistryName(dyeColor.getTranslationKey() + "_concrete_slab");
+        super(Block.Properties.of(Material.STONE, dyeColor).explosionResistance(1.8F));
+        setRegistryName(dyeColor.getSerializedName() + "_concrete_slab");
     }
 
     @Override
-    public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-        if (group == ItemGroup.SEARCH || isEnabled())
-            super.fillItemGroup(group, items);
+    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
+        if (group == CreativeModeTab.TAB_SEARCH || isEnabled())
+            super.fillItemCategory(group, items);
     }
 
     static public Stream<Block> allBlocks() {

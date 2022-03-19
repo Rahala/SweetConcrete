@@ -1,4 +1,9 @@
-### v1.7.2 Current Version
+### v1.8
+
+#### Removed Features
+* Removed support for signs (may return later)
+
+### v1.7.2
 
 #### Bug fixes
 * Fixed ladders not being climbable in newer Forge versions

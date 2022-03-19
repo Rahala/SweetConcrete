@@ -1,11 +1,11 @@
 modLoader="javafml" #mandatory
-loaderVersion="[28,)" #mandatory (28 is current forge version)
+loaderVersion = "[32,)"
 license="MIT License"
 issueTrackerURL="https://github.com/Rahala/SweetConcrete/issues" #optional
 
 [[mods]]
 modId="sweetconcrete"
-version="1.16.3-1.7.2"
+version="1.18.2-1.8"
 displayName="Sweet Concrete"
 authors="Rahala" #optional
 description='''
@@ -13,8 +13,22 @@ All the concrete blocks you can eat.
 '''
 
 [[dependencies.sweetconcrete]]
-    modId="forge"
-    mandatory=true
-    versionRange="[28,)"
-    ordering="NONE"
-    side="BOTH"
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.sweetconcrete]]
+modId = "forge"
+mandatory = true
+versionRange = "[40.0.19,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.sweetconcrete]]
+modId = "blueprint"
+mandatory = true
+versionRange = "[5.2.1,)"
+ordering = "BEFORE"
+side = "BOTH"

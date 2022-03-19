@@ -1,16 +1,16 @@
 package org.villainy.sweetconcrete.items.helper;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 import java.util.Objects;
 
 public class BlockItemHelper {
 
-    public static Item createBasicBlockItem(Block block, ItemGroup group) {
-        return new BlockItem(block, new Item.Properties().group(group))
+    public static Item createBasicBlockItem(Block block, CreativeModeTab group) {
+        return new BlockItem(block, new Item.Properties().tab(group))
                 .setRegistryName(Objects.requireNonNull(block.getRegistryName()));
     }
 

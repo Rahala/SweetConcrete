@@ -63,6 +63,7 @@ def generateTags():
     buttons = []
     pressurePlates = []
     fences = []
+    climbable = []
 
     for file in os.listdir(RESOURCES_DIR + '/assets/sweetconcrete/blockstates'):
         if '.json' in file:
@@ -77,6 +78,8 @@ def generateTags():
                 buttons.append(name)
             elif '_fence' in name:
                 fences.append(name)
+            elif '_ladder' in name:
+                climbable.append(name)
 
     writeTagFile('items/walls.json', walls)
     writeTagFile('items/slabs.json', slabs)
@@ -84,6 +87,7 @@ def generateTags():
     writeTagFile('items/buttons.json', buttons)
     writeTagFile('items/wooden_pressure_plates.json', pressurePlates)
     writeTagFile('items/fences.json', fences)
+    writeTagFile('blocks/climbable.json', climbable)
 
 
     writeTagFile('blocks/walls.json', walls)
@@ -235,7 +239,7 @@ blockTypes = {
     'fence': fenceAssets,
     'fence_gate': fenceGateAssets,
     'ladder': ladderAssets,
-    'sign': signAssets,
+    # 'sign': signAssets,
     'vertical_slab': verticalSlabAssets,
     'powder_layer': powderLayerAssets,
 }
