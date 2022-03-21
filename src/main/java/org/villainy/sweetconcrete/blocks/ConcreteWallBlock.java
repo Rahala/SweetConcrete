@@ -19,7 +19,7 @@ public class ConcreteWallBlock extends WallBlock {
     }
 
     public ConcreteWallBlock(DyeColor dyeColor) {
-        super(Block.Properties.of(Material.STONE, dyeColor).explosionResistance(1.8F));
+        super(Block.Properties.of(Material.STONE, dyeColor).requiresCorrectToolForDrops().strength(1.25F, 4.2F));
         setRegistryName(dyeColor.getSerializedName() + "_concrete_wall");
     }
 

@@ -42,7 +42,7 @@ public class ConcretePowderLayerBlock extends Block {
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
 
     public ConcretePowderLayerBlock(DyeColor dyeColor) {
-        super(Block.Properties.of(Material.SAND, dyeColor).explosionResistance(0.5F).sound(SoundType.SAND));
+        super(Block.Properties.of(Material.SAND, dyeColor).strength(0.5F).sound(SoundType.SAND));
         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(LAYERS, Integer.valueOf(1)));
         setRegistryName(dyeColor.getSerializedName() + "_concrete_powder_layer");
     }

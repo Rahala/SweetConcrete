@@ -20,7 +20,7 @@ public class ConcreteFenceGateBlock extends FenceGateBlock {
     }
 
     public ConcreteFenceGateBlock(DyeColor dyeColor) {
-        super(Block.Properties.of(Material.STONE, dyeColor).explosionResistance(1.8F).sound(SoundType.STONE));
+        super(Block.Properties.of(Material.STONE, dyeColor).requiresCorrectToolForDrops().strength(1.25F, 4.2F).sound(SoundType.STONE));
         setRegistryName(dyeColor.getSerializedName() + "_concrete_fence_gate");
     }
 

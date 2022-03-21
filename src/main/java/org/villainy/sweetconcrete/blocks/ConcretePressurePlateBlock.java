@@ -21,7 +21,7 @@ public class ConcretePressurePlateBlock extends PressurePlateBlock {
     public ConcretePressurePlateBlock(DyeColor dyeColor) {
         super(Sensitivity.EVERYTHING,
                 Block.Properties.of(Material.STONE, dyeColor)
-                        .explosionResistance(1.8F)
+                        .requiresCorrectToolForDrops().strength(1.25F, 4.2F)
                         .noCollission());
         setRegistryName(dyeColor.getSerializedName() + "_concrete_pressure_plate");
     }
