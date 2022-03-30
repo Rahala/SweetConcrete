@@ -1,3 +1,8 @@
+### v1.8.1
+
+#### Bug fixes
+* Fix crash on newer versions of Forge
+
 ### v1.8
 
 #### Removed Features
